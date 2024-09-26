@@ -1,7 +1,7 @@
-
-<html lang="en" data-id="hcaptcha-frame-8524269">
+<!DOCTYPE html>
+<html lang="en" data-id="hcaptcha-frame-70b4624">
     <head>
-        <title>hCaptcha2</title>
+        <title>hCaptcha</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <style type="text/css">
@@ -131,7 +131,6 @@
     <body class="no-selection">
         <script type="text/javascript">
             /* https://hcaptcha.com/license */
-            console.log('working...')
             !function() {
                 "use strict";
                 function t(t) {
@@ -387,11 +386,11 @@
                     return t >= 0 && t <= 127
                 }
                   , g = -1;
-                function v(t) {
+                function b(t) {
                     this.tokens = [].slice.call(t),
                     this.tokens.reverse()
                 }
-                v.prototype = {
+                b.prototype = {
                     endOfStream: function() {
                         return !this.tokens.length
                     },
@@ -413,7 +412,7 @@
                             this.tokens.unshift(t)
                     }
                 };
-                var b = -1;
+                var v = -1;
                 function w(t, e) {
                     if (t)
                         throw TypeError("Decoder error");
@@ -507,7 +506,7 @@
                             return r = 0,
                             w(e);
                         if (a === g)
-                            return b;
+                            return v;
                         if (0 === r) {
                             if (p(a, 0, 127))
                                 return a;
@@ -549,7 +548,7 @@
                     t.fatal;
                     this.handler = function(t, e) {
                         if (e === g)
-                            return b;
+                            return v;
                         if (m(e))
                             return e;
                         var i, n;
@@ -589,17 +588,17 @@
                     }),
                     this._BOMseen = !1),
                     this._do_not_flush = Boolean(e.stream);
-                    for (var n, r = new v(i), o = []; ; ) {
+                    for (var n, r = new b(i), o = []; ; ) {
                         var s = r.read();
                         if (s === g)
                             break;
-                        if ((n = this._decoder.handler(r, s)) === b)
+                        if ((n = this._decoder.handler(r, s)) === v)
                             break;
                         null !== n && (Array.isArray(n) ? o.push.apply(o, n) : o.push(n))
                     }
                     if (!this._do_not_flush) {
                         do {
-                            if ((n = this._decoder.handler(r, r.read())) === b)
+                            if ((n = this._decoder.handler(r, r.read())) === v)
                                 break;
                             null !== n && (Array.isArray(n) ? o.push.apply(o, n) : o.push(n))
                         } while (!r.endOfStream());
@@ -635,7 +634,7 @@
                         fatal: "fatal" === this._fatal
                     })),
                     this._do_not_flush = Boolean(e.stream);
-                    for (var i, n = new v(function(t) {
+                    for (var i, n = new b(function(t) {
                         for (var e = String(t), i = e.length, n = 0, r = []; n < i; ) {
                             var o = e.charCodeAt(n);
                             if (o < 55296 || o > 57343)
@@ -662,12 +661,12 @@
                         var o = n.read();
                         if (o === g)
                             break;
-                        if ((i = this._encoder.handler(n, o)) === b)
+                        if ((i = this._encoder.handler(n, o)) === v)
                             break;
                         Array.isArray(i) ? r.push.apply(r, i) : r.push(i)
                     }
                     if (!this._do_not_flush) {
-                        for (; (i = this._encoder.handler(n, n.read())) !== b; )
+                        for (; (i = this._encoder.handler(n, n.read())) !== v; )
                             Array.isArray(i) ? r.push.apply(r, i) : r.push(i);
                         this._encoder = null
                     }
@@ -712,7 +711,7 @@
                                             u = w[4],
                                             "jwk" === r && ((o = g(o)).alg || (o.alg = m(c)),
                                             o.key_ops || (o.key_ops = "oct" !== o.kty ? "d"in o ? u.filter(_) : u.filter(E) : u.slice()),
-                                            w[1] = v(o));
+                                            w[1] = b(o));
                                             break;
                                         case "unwrapKey":
                                             c = w[4],
@@ -750,7 +749,7 @@
                                         if ((a || s && "SHA-1" === (c.hash || {}).name) && "importKey" === t && "jwk" === r && "HMAC" === c.name && "oct" === o.kty)
                                             return i.importKey("raw", d(f(o.k)), l, w[3], w[4]);
                                         if (a && "importKey" === t && ("spki" === r || "pkcs8" === r))
-                                            return i.importKey("jwk", b(o), l, w[3], w[4]);
+                                            return i.importKey("jwk", v(o), l, w[3], w[4]);
                                         if (s && "unwrapKey" === t)
                                             return i.decrypt(w[3], l, o).then((function(t) {
                                                 return i.importKey(r, t, w[4], w[5], w[6])
@@ -1035,13 +1034,13 @@
                         }
                         return e
                     }
-                    function v(t) {
+                    function b(t) {
                         var e = g(t);
                         return s && (e.extractable = e.ext,
                         delete e.ext),
                         d(unescape(encodeURIComponent(JSON.stringify(e)))).buffer
                     }
-                    function b(t) {
+                    function v(t) {
                         var e = x(t)
                           , i = !1;
                         e.length > 2 && (i = !0,
@@ -1453,7 +1452,7 @@
                                     return +new Date
                                 }
                                 function r(t, e) {
-                                    return v(e) ? function(i) {
+                                    return b(e) ? function(i) {
                                         return e(i, t)
                                     }
                                     : e
@@ -1519,8 +1518,8 @@
                                   , y = h.isObject
                                   , m = h.isPlainObject
                                   , g = h.isUndefined
-                                  , v = h.isFunction
-                                  , b = h.isString
+                                  , b = h.isFunction
+                                  , v = h.isString
                                   , w = h.isArray
                                   , x = h.isEmptyObject
                                   , k = h.each
@@ -1619,7 +1618,7 @@
                                         this.y()
                                     },
                                     context: function(t, e, i) {
-                                        return v(t) && (i = e || [],
+                                        return b(t) && (i = e || [],
                                         e = t,
                                         t = {}),
                                         this.wrap(t, e).apply(this, i)
@@ -1629,7 +1628,7 @@
                                             var n = []
                                               , o = arguments.length
                                               , s = !t || t && !1 !== t.deep;
-                                            for (i && v(i) && i.apply(this, arguments); o--; )
+                                            for (i && b(i) && i.apply(this, arguments); o--; )
                                                 n[o] = s ? r.wrap(t, arguments[o]) : arguments[o];
                                             try {
                                                 return e.apply(this, n)
@@ -1640,11 +1639,11 @@
                                             }
                                         }
                                         var r = this;
-                                        if (g(e) && !v(t))
+                                        if (g(e) && !b(t))
                                             return t;
-                                        if (v(t) && (e = t,
+                                        if (b(t) && (e = t,
                                         t = void 0),
-                                        !v(e))
+                                        !b(e))
                                             return e;
                                         try {
                                             if (e.M)
@@ -1773,7 +1772,7 @@
                                         var e = C({
                                             timestamp: n() / 1e3
                                         }, t);
-                                        if (v(this.k.breadcrumbCallback)) {
+                                        if (b(this.k.breadcrumbCallback)) {
                                             var i = this.k.breadcrumbCallback(e);
                                             if (y(i) && !x(i))
                                                 e = i;
@@ -1972,7 +1971,7 @@
                                                 for (var r = new Array(arguments.length), o = 0; o < r.length; ++o)
                                                     r[o] = arguments[o];
                                                 var s = r[0];
-                                                return v(s) && (r[0] = i.wrap({
+                                                return b(s) && (r[0] = i.wrap({
                                                     mechanism: {
                                                         type: "instrument",
                                                         data: {
@@ -2061,7 +2060,7 @@
                                     },
                                     E: function() {
                                         function t(t, i) {
-                                            t in i && v(i[t]) && R(i, t, (function(i) {
+                                            t in i && b(i[t]) && R(i, t, (function(i) {
                                                 return e.wrap({
                                                     mechanism: {
                                                         type: "instrument",
@@ -2081,7 +2080,7 @@
                                             var r = z.XMLHttpRequest && z.XMLHttpRequest.prototype;
                                             R(r, "open", (function(t) {
                                                 return function(i, n) {
-                                                    return b(n) && -1 === n.indexOf(e.h) && (this.ea = {
+                                                    return v(n) && -1 === n.indexOf(e.h) && (this.ea = {
                                                         method: i,
                                                         url: n,
                                                         status_code: null
@@ -2106,7 +2105,7 @@
                                                     }
                                                     for (var r = this, o = ["onload", "onerror", "onprogress"], s = 0; s < o.length; s++)
                                                         t(o[s], r);
-                                                    return "onreadystatechange"in r && v(r.onreadystatechange) ? R(r, "onreadystatechange", (function(t) {
+                                                    return "onreadystatechange"in r && b(r.onreadystatechange) ? R(r, "onreadystatechange", (function(t) {
                                                         return e.wrap({
                                                             mechanism: {
                                                                 type: "instrument",
@@ -2397,8 +2396,8 @@
                                             (null == t[e] || "" === t[e] || x(t[e])) && delete t[e]
                                         }
                                         )),
-                                        v(e.dataCallback) && (t = e.dataCallback(t) || t),
-                                        t && !x(t) && (!v(e.shouldSendCallback) || e.shouldSendCallback(t)))
+                                        b(e.dataCallback) && (t = e.dataCallback(t) || t),
+                                        t && !x(t) && (!b(e.shouldSendCallback) || e.shouldSendCallback(t)))
                                             return this.ma() ? void this.z("warn", "Raven dropped error due to backoff: ", t) : void ("number" == typeof e.sampleRate ? Math.random() < e.sampleRate && this.qa(t) : this.qa(t))
                                     },
                                     pa: function(t) {
@@ -2610,7 +2609,7 @@
                                 function u(t, e) {
                                     if ("number" != typeof e)
                                         throw new Error("2nd argument to `truncate` function should be a number");
-                                    return "string" != typeof t || 0 === e || t.length <= e ? t : t.substr(0, e) + "Ã¢â‚¬Â¦"
+                                    return "string" != typeof t || 0 === e || t.length <= e ? t : t.substr(0, e) + "…"
                                 }
                                 function f(t, e) {
                                     return Object.prototype.hasOwnProperty.call(t, e)
@@ -2660,7 +2659,7 @@
                                         return ~-encodeURI(t).split(/%..|./).length
                                     }(JSON.stringify(t))
                                 }
-                                function v(t) {
+                                function b(t) {
                                     if ("string" == typeof t) {
                                         return u(t, 40)
                                     }
@@ -2669,15 +2668,15 @@
                                     var e = Object.prototype.toString.call(t);
                                     return "[object Object]" === e ? "[Object]" : "[object Array]" === e ? "[Array]" : "[object Function]" === e ? t.name ? "[Function: " + t.name + "]" : "[Function]" : t
                                 }
-                                function b(t, e) {
-                                    return 0 === e ? v(t) : s(t) ? Object.keys(t).reduce((function(i, n) {
-                                        return i[n] = b(t[n], e - 1),
+                                function v(t, e) {
+                                    return 0 === e ? b(t) : s(t) ? Object.keys(t).reduce((function(i, n) {
+                                        return i[n] = v(t[n], e - 1),
                                         i
                                     }
                                     ), {}) : Array.isArray(t) ? t.map((function(t) {
-                                        return b(t, e - 1)
+                                        return v(t, e - 1)
                                     }
-                                    )) : v(t)
+                                    )) : b(t)
                                 }
                                 var w = t(7)
                                   , x = "undefined" != typeof window ? window : void 0 !== i ? i : "undefined" != typeof self ? self : {}
@@ -2852,7 +2851,7 @@
                                         if (!s(t))
                                             return t;
                                         i = "number" != typeof (e = "number" != typeof e ? k : e) ? C : i;
-                                        var n = b(t, e);
+                                        var n = v(t, e);
                                         return g(w(n)) > i ? _(t, e - 1) : n
                                     },
                                     serializeKeysForMessage: function(t, e) {
@@ -2871,7 +2870,7 @@
                                         for (var i = t.length; i > 0; i--) {
                                             var n = t.slice(0, i).join(", ");
                                             if (!(n.length > e))
-                                                return i === t.length ? n : n + "Ã¢â‚¬Â¦"
+                                                return i === t.length ? n : n + "…"
                                         }
                                         return ""
                                     },
@@ -2944,13 +2943,13 @@
                                                 url: s,
                                                 line: a,
                                                 column: h
-                                            }, v = void 0;
+                                            }, b = void 0;
                                             if ("[object String]" === {}.toString.call(p))
-                                                (y = p.match(c)) && (v = y[1],
+                                                (y = p.match(c)) && (b = y[1],
                                                 p = y[2]);
                                             g.func = l,
                                             t({
-                                                name: v,
+                                                name: b,
                                                 message: p,
                                                 url: n(),
                                                 stack: [g]
@@ -3052,11 +3051,11 @@
                                                     m.send(null),
                                                     200 === m.status) {
                                                         var g = m.responseText || ""
-                                                          , v = (g = g.slice(-300)).match(/\/\/# sourceMappingURL=(.*)$/);
-                                                        if (v) {
-                                                            var b = v[1];
-                                                            "~" === b.charAt(0) && (b = ("undefined" == typeof document || null == document.location ? "" : document.location.origin ? document.location.origin : document.location.protocol + "//" + document.location.hostname + (document.location.port ? ":" + document.location.port : "")) + b.slice(1)),
-                                                            r.url = b.slice(0, -4)
+                                                          , b = (g = g.slice(-300)).match(/\/\/# sourceMappingURL=(.*)$/);
+                                                        if (b) {
+                                                            var v = b[1];
+                                                            "~" === v.charAt(0) && (v = ("undefined" == typeof document || null == document.location ? "" : document.location.origin ? document.location.origin : document.location.protocol + "//" + document.location.hostname + (document.location.port ? ":" + document.location.port : "")) + v.slice(1)),
+                                                            r.url = v.slice(0, -4)
                                                         }
                                                     }
                                                 }
@@ -3690,8 +3689,8 @@
                   , it = {
                     INVALID_DATA: "invalid-data",
                     BUNDLE_ERROR: "bundle-error",
-                    NETWORK_ERROR: "network-error",
                     RATE_LIMITED: "rate-limited",
+                    NETWORK_ERROR: "network-error",
                     CHALLENGE_ERROR: "challenge-error",
                     INCOMPLETE_ANSWER: "incomplete-answer",
                     MISSING_CAPTCHA: "missing-captcha",
@@ -3724,7 +3723,7 @@
                     a11y_tfe: null,
                     pingdom: "safari" === tt.Browser.type && "windows" !== tt.System.os && "mac" !== tt.System.os && "ios" !== tt.System.os && "android" !== tt.System.os,
                     assetDomain: "https://newassets.hcaptcha.com",
-                    assetUrl: "https://newassets.hcaptcha.com/captcha/v1/8524269/static",
+                    assetUrl: "https://newassets.hcaptcha.com/captcha/v1/70b4624/static",
                     width: null,
                     height: null,
                     mobile: null,
@@ -3785,7 +3784,7 @@
                     confirmNav: !1
                 }
                   , ft = "https://30910f52569b4c17b1081ead2dae43b4@sentry.hcaptcha.com/6"
-                  , dt = "8524269"
+                  , dt = "70b4624"
                   , pt = "prod";
                 function yt(t, e) {
                     t.style.width = "304px",
@@ -3816,8 +3815,8 @@
                         t(a[l])
                 }
                 var gt = "The captcha failed to load."
-                  , vt = [];
-                function bt(t) {
+                  , bt = [];
+                function vt(t) {
                     for (var e = [], i = /(https?|wasm):\/\//, n = /^at /, r = /:\d+:\d+/g, o = 0, s = t.length; o < s; o++) {
                         var a = t[o];
                         if (!i.test(a)) {
@@ -3828,9 +3827,9 @@
                     return e.join("\n").trim()
                 }
                 function wt(t) {
-                    if (t && "string" == typeof t && -1 === vt.indexOf(t) && !(vt.length >= 10)) {
-                        var e = bt(t.trim().split("\n").slice(0, 2));
-                        vt.push(e)
+                    if (t && "string" == typeof t && -1 === bt.indexOf(t) && !(bt.length >= 10)) {
+                        var e = vt(t.trim().split("\n").slice(0, 2));
+                        bt.push(e)
                     }
                 }
                 function xt(t) {
@@ -5016,40 +5015,40 @@
                 }
                   , oe = {
                     zh: {
-                        "I am human": "Ã¦Ë†â€˜Ã¦ËœÂ¯Ã¤ÂºÂº"
+                        "I am human": "我是人"
                     },
                     ar: {
-                        "I am human": "Ã˜Â£Ã™â€ Ã˜Â§ Ã˜Â§Ã™â€žÃ˜Â¥Ã™â€ Ã˜Â³Ã˜Â§Ã™â€ "
+                        "I am human": "أنا الإنسان"
                     },
                     af: {
                         "I am human": "Ek is menslike"
                     },
                     am: {
-                        "I am human": "Ã¡Å Â¥Ã¡Å â€ Ã¡Ë†Â°Ã¡â€¹Â Ã¡Å ÂÃ¡Å Â"
+                        "I am human": "እኔ ሰው ነኝ"
                     },
                     hy: {
-                        "I am human": "Ã”ÂµÃ•Â½ Ã•Â´Ã•Â¡Ã–â‚¬Ã•Â¤ Ã•Â¥Ã•Â´"
+                        "I am human": "Ես մարդ եմ"
                     },
                     az: {
-                        "I am human": "MÃ‰â„¢n insanam"
+                        "I am human": "Mən insanam"
                     },
                     eu: {
                         "I am human": "Gizakia naiz"
                     },
                     bn: {
-                        "I am human": "Ã Â¦â€ Ã Â¦Â®Ã Â¦Â¿ Ã Â¦Â®Ã Â¦Â¾Ã Â¦Â¨Ã Â¦Â¬ Ã Â¦Â¨Ã Â¦â€¡"
+                        "I am human": "আমি মানব নই"
                     },
                     bg: {
-                        "I am human": "ÃÂÃÂ· Ã‘ÂÃ‘Å ÃÂ¼ Ã‘â€¡ÃÂ¾ÃÂ²ÃÂµÃÂº"
+                        "I am human": "Аз съм човек"
                     },
                     ca: {
-                        "I am human": "SÃƒÂ³c humÃƒ "
+                        "I am human": "Sóc humà"
                     },
                     hr: {
-                        "I am human": "Ja sam Ã„Âovjek"
+                        "I am human": "Ja sam čovjek"
                     },
                     cs: {
-                        "I am human": "Jsem Ã„ÂlovÃ„â€ºk"
+                        "I am human": "Jsem člověk"
                     },
                     da: {
                         "I am human": "Jeg er et menneske"
@@ -5070,28 +5069,28 @@
                         "I am human": "Eu son humano"
                     },
                     ka: {
-                        "I am human": "Ã¡Æ’â€ºÃ¡Æ’â€ Ã¡Æ’â€¢Ã¡Æ’ÂÃ¡Æ’  Ã¡Æ’ÂÃ¡Æ’â€œÃ¡Æ’ÂÃ¡Æ’â€ºÃ¡Æ’ËœÃ¡Æ’ÂÃ¡Æ’Å“Ã¡Æ’Ëœ"
+                        "I am human": "მე ვარ ადამიანი"
                     },
                     de: {
                         "I am human": "Ich bin ein Mensch"
                     },
                     el: {
-                        "I am human": "ÃŽâ€¢ÃŽÂ¯ÃŽÂ¼ÃŽÂ±ÃŽÂ¹ ÃŽÂ¬ÃŽÂ½ÃŽÂ¸ÃÂÃâ€°Ãâ‚¬ÃŽÂ¿Ãâ€š"
+                        "I am human": "Είμαι άνθρωπος"
                     },
                     gu: {
-                        "I am human": "Ã ÂªÂ¹Ã Â«ÂÃ Âªâ€š Ã ÂªÂ®Ã ÂªÂ¾Ã ÂªÂ¨Ã ÂªÂµ Ã Âªâ€ºÃ Â«ÂÃ Âªâ€š"
+                        "I am human": "હું માનવ છું"
                     },
                     iw: {
-                        "I am human": ". Ã—ÂÃ— Ã—â„¢ Ã—ÂÃ— Ã—â€¢Ã—Â©Ã—â„¢"
+                        "I am human": ". אני אנושי"
                     },
                     hi: {
-                        "I am human": "Ã Â¤Â®Ã Â¥Ë†Ã Â¤â€š Ã Â¤Â®Ã Â¤Â¾Ã Â¤Â¨Ã Â¤Âµ Ã Â¤Â¹Ã Â¥â€šÃ Â¤â€š"
+                        "I am human": "मैं मानव हूं"
                     },
                     hu: {
                         "I am human": "Nem vagyok robot"
                     },
                     is: {
-                        "I am human": "Ãƒâ€°g er manneskja"
+                        "I am human": "Ég er manneskja"
                     },
                     id: {
                         "I am human": "Aku manusia"
@@ -5100,43 +5099,43 @@
                         "I am human": "Sono un essere umano"
                     },
                     ja: {
-                        "I am human": "Ã§Â§ÂÃ£ÂÂ¯Ã¤ÂºÂºÃ©â€“â€œÃ£ÂÂ§Ã£Ââ„¢"
+                        "I am human": "私は人間です"
                     },
                     kn: {
-                        "I am human": "Ã Â²Â¨Ã Â²Â¾Ã Â²Â¨Ã Â³Â Ã Â²Â®Ã Â²Â¾Ã Â²Â¨Ã Â²ÂµÃ Â²Â¨Ã Â³Â"
+                        "I am human": "ನಾನು ಮಾನವನು"
                     },
                     ko: {
-                        "I am human": "Ã¬â€šÂ¬Ã«Å¾Å’Ã¬Å¾â€¦Ã«â€¹Ë†Ã«â€¹Â¤"
+                        "I am human": "사람입니다"
                     },
                     lo: {
-                        "I am human": "Ã Âºâ€šÃ Â»â€°Ã ÂºÂ­Ã ÂºÂÃ Â»â‚¬Ã Âºâ€ºÃ ÂºÂ±Ã Âºâ„¢Ã ÂºÂ¡Ã ÂºÂ°Ã Âºâ„¢Ã ÂºÂ¸Ã Âºâ€"
+                        "I am human": "ຂ້ອຍເປັນມະນຸດ"
                     },
                     lv: {
-                        "I am human": "Es esmu cilvÃ„â€œks"
+                        "I am human": "Es esmu cilvēks"
                     },
                     lt: {
-                        "I am human": "AÃ…Â¡ esu Ã…Â¾mogaus"
+                        "I am human": "Aš esu žmogaus"
                     },
                     ms: {
                         "I am human": "Saya manusia"
                     },
                     ml: {
-                        "I am human": "Ã Â´Å¾Ã Â´Â¾Ã ÂµÂ» Ã Â´Â®Ã Â´Â¨Ã ÂµÂÃ Â´Â·Ã ÂµÂÃ Â´Â¯Ã Â´Â¨Ã Â´Â¾Ã Â´Â£Ã ÂµÂ"
+                        "I am human": "ഞാൻ മനുഷ്യനാണ്"
                     },
                     mr: {
-                        "I am human": "Ã Â¤Â®Ã Â¥â‚¬ Ã Â¤Â®Ã Â¤Â¾Ã Â¤Â¨Ã Â¤ÂµÃ Â¥â‚¬ Ã Â¤â€ Ã Â¤Â¹Ã Â¥â€¡"
+                        "I am human": "मी मानवी आहे"
                     },
                     mn: {
-                        "I am human": "Ãâ€˜ÃÂ¸ ÃÂ±ÃÂ¾ÃÂ» Ã‘â€¦Ã’Â¯ÃÂ½"
+                        "I am human": "Би бол хүн"
                     },
                     no: {
                         "I am human": "Jeg er menneskelig"
                     },
                     fa: {
-                        "I am human": "Ã™â€¦Ã™â€  Ã˜Â§Ã™â€ Ã˜Â³Ã˜Â§Ã™â€ Ã›Å’ Ã™â€¡Ã˜Â³Ã˜ÂªÃ™â€¦"
+                        "I am human": "من انسانی هستم"
                     },
                     pl: {
-                        "I am human": "Jestem czÃ…â€šowiekiem"
+                        "I am human": "Jestem człowiekiem"
                     },
                     pt: {
                         "I am human": "Sou humano"
@@ -5145,19 +5144,19 @@
                         "I am human": "Eu sunt om"
                     },
                     ru: {
-                        "I am human": "ÃÂ¯ Ã‘â€¡ÃÂµÃÂ»ÃÂ¾ÃÂ²ÃÂµÃÂº"
+                        "I am human": "Я человек"
                     },
                     sr: {
                         "I am human": "Ja sam ljudski"
                     },
                     si: {
-                        "I am human": "Ã Â¶Â¸Ã Â¶Â¸ Ã Â¶Â¸Ã Â·â€™Ã Â¶Â±Ã Â·â€™Ã Â·Æ’Ã Â·Å Ã Â·Æ’Ã Â·â€"
+                        "I am human": "මම මිනිස්සු"
                     },
                     sk: {
-                        "I am human": "Ja som Ã„Âlovek"
+                        "I am human": "Ja som človek"
                     },
                     sl: {
-                        "I am human": "Jaz sem Ã„ÂloveÃ…Â¡ki"
+                        "I am human": "Jaz sem človeški"
                     },
                     es: {
                         "I am human": "Soy humano"
@@ -5166,28 +5165,28 @@
                         "I am human": "Mimi ni binadamu"
                     },
                     sv: {
-                        "I am human": "Jag ÃƒÂ¤r mÃƒÂ¤nniska"
+                        "I am human": "Jag är människa"
                     },
                     ta: {
-                        "I am human": "Ã Â®Â¨Ã Â®Â¾Ã Â®Â©Ã Â¯Â Ã Â®Â®Ã Â®Â©Ã Â®Â¿Ã Â®Â¤"
+                        "I am human": "நான் மனித"
                     },
                     te: {
-                        "I am human": "Ã Â°Â¨Ã Â±â€¡Ã Â°Â¨Ã Â±Â Ã Â°Â®Ã Â°Â¨Ã Â°Â¿Ã Â°Â·Ã Â°Â¿Ã Â°Â¨Ã Â°Â¿"
+                        "I am human": "నేను మనిషిని"
                     },
                     th: {
-                        "I am human": "Ã Â¸Å“Ã Â¸Â¡Ã Â¸Â¡Ã Â¸â„¢Ã Â¸Â¸Ã Â¸Â©Ã Â¸Â¢Ã Â¹Å’"
+                        "I am human": "ผมมนุษย์"
                     },
                     tr: {
-                        "I am human": "Ben bir insanÃ„Â±m"
+                        "I am human": "Ben bir insanım"
                     },
                     uk: {
-                        "I am human": "ÃÂ¯ ÃÂ»Ã‘Å½ÃÂ´ÃÂ¸ÃÂ½ÃÂ¸"
+                        "I am human": "Я людини"
                     },
                     ur: {
-                        "I am human": "Ã™â€¦Ã›Å’ÃšÂº Ã˜Â§Ã™â€ Ã˜Â³Ã˜Â§Ã™â€  Ã›ÂÃ™Ë†ÃšÂº"
+                        "I am human": "میں انسان ہوں"
                     },
                     vi: {
-                        "I am human": "TÃƒÂ´i lÃƒ  con ngÃ†Â°Ã¡Â»Âi"
+                        "I am human": "Tôi là con người"
                     },
                     zu: {
                         "I am human": "Ngingumuntu"
@@ -5483,14 +5482,14 @@
                         error: []
                     }
                 }
-                function ve(t, e, i) {
+                function be(t, e, i) {
                     for (var n = t[e], r = n.length, o = null; --r > -1; )
                         o = n[r],
                         n.splice(r, 1),
                         o(i);
                     "error" === e ? t.load = [] : t.error = []
                 }
-                function be(t, e) {
+                function ve(t, e) {
                     var i = t;
                     e || (e = {}),
                     e.prefix && (i = e.prefix + "/" + t),
@@ -5577,7 +5576,7 @@
                     ))["catch"]((function(t) {
                         e.error = !0;
                         var i = (t && t.message ? t.message : t || "Loading Error") + ": " + n;
-                        throw ve(e.cb, "error", i),
+                        throw be(e.cb, "error", i),
                         i
                     }
                     ))
@@ -5600,7 +5599,7 @@
                             t.error = !0,
                             a.onload = a.onerror = null;
                             var e = "Loading Error: " + n;
-                            ve(t.cb, "error", e),
+                            be(t.cb, "error", e),
                             o(e)
                         }
                         ,
@@ -5617,7 +5616,7 @@
                     this.height = i,
                     this.aspect = e / i,
                     this.loaded = !0,
-                    ve(this.cb, "load", this)
+                    be(this.cb, "load", this)
                 }
                 ,
                 ge.prototype.onload = function(t) {
@@ -5628,7 +5627,7 @@
                     this.loaded && !this.error || (this.error ? t(this) : this.cb.error.push(t))
                 }
                 ,
-                be.prototype.load = function() {
+                ve.prototype.load = function() {
                     var t = this
                       , e = this.attribs
                       , i = this.src
@@ -5657,18 +5656,18 @@
                         e.crossOrigin && (s.crossorigin = e.crossOrigin),
                         e.async && (s.async = !0),
                         e.defer && (s.defer = !0),
-                        // e.integrity && (s.integrity = e.integrity),
+                        e.integrity && (s.integrity = e.integrity),
                         document.body.appendChild(s),
                         s.complete && s.onload()
                     }
                     ))
                 }
                 ,
-                be.prototype.onload = function(t) {
+                ve.prototype.onload = function(t) {
                     this.error || (this.loaded ? t(this) : this.cb.load.push(t))
                 }
                 ,
-                be.prototype.onerror = function(t) {
+                ve.prototype.onerror = function(t) {
                     this.loaded && !this.error || (this.error ? t(this) : this.cb.error.push(t))
                 }
                 ,
@@ -5712,7 +5711,7 @@
                         i.load()
                     },
                     script: function(t, e) {
-                        var i = new be(t,e);
+                        var i = new ve(t,e);
                         return Ce.push(i),
                         i.load()
                     },
@@ -7073,17 +7072,17 @@
                     300: "#4DE1D2",
                     500: "#00838F"
                 }
-                  , vi = {
+                  , bi = {
                     300: "#BF1722",
                     500: "#BF1722",
                     700: "#9D1B1B"
                 }
-                  , bi = {
+                  , vi = {
                     __proto__: null,
                     common: yi,
                     grey: mi,
                     teal: gi,
-                    red: vi
+                    red: bi
                 }
                   , wi = {
                     mode: "light",
@@ -7095,9 +7094,9 @@
                         main: gi[300]
                     },
                     warn: {
-                        light: vi[300],
-                        main: vi[500],
-                        dark: vi[700]
+                        light: bi[300],
+                        main: bi[500],
+                        dark: bi[700]
                     },
                     text: {
                         heading: mi[700],
@@ -7185,7 +7184,7 @@
                 ;
                 var Ei = {
                     __proto__: null,
-                    Colors: bi,
+                    Colors: vi,
                     Theme: Ci
                 }
                   , _i = new Ci;
@@ -7690,7 +7689,7 @@
                     return this.state.value
                 }
                 ;
-                var Ri = "https://newassets.hcaptcha.com/captcha/v1/8524269/static/images";
+                var Ri = "https://newassets.hcaptcha.com/captcha/v1/70b4624/static/images";
                 function Pi(t) {
                     t.selector = t.selector || t.name,
                     Xt.self(this, Mi, t),
@@ -9557,7 +9556,7 @@
                     }
                     ))
                 }
-                function vn() {
+                function bn() {
                     Xt.self(this, Qt, "information");
                     var t = this;
                     this.instructions = this.initComponent(mn, null, this.$content),
@@ -9567,7 +9566,7 @@
                     }
                     ))
                 }
-                function bn() {
+                function vn() {
                     Xt.self(this, Qt, "actions");
                     var t = this;
                     this.cancel = this.initComponent(Fi, {
@@ -9626,8 +9625,8 @@
                     this.link.setAttribute("aria-label", t)
                 }
                 ,
-                Xt.proto(vn, Qt),
-                vn.prototype.style = function(t, e, i) {
+                Xt.proto(bn, Qt),
+                bn.prototype.style = function(t, e, i) {
                     var n = Math.floor(Ft(t, 250, 275, 12, 14));
                     this.instructions.style(n),
                     this.instructions.css({
@@ -9636,13 +9635,13 @@
                     this.feedback.style(t)
                 }
                 ,
-                vn.prototype.setCopy = function() {
+                bn.prototype.setCopy = function() {
                     this.instructions.setCopy(),
                     this.feedback.setCopy()
                 }
                 ,
-                Xt.proto(bn, Qt),
-                bn.prototype.style = function(t, e, i) {
+                Xt.proto(vn, Qt),
+                vn.prototype.style = function(t, e, i) {
                     this.send.style(),
                     this.cancel.style(t, i),
                     this.cancel.css({
@@ -9655,17 +9654,17 @@
                     })
                 }
                 ,
-                bn.prototype.setCopy = function() {
+                vn.prototype.setCopy = function() {
                     this.cancel.setText(),
                     this.send.setText()
                 }
                 ,
-                bn.prototype.lockSend = function(t) {
+                vn.prototype.lockSend = function(t) {
                     this.send.lock(t),
                     t ? this.send.setLabel("Please select an option to send response.") : this.send.removeAttribute("aria-label")
                 }
                 ,
-                bn.prototype.visible = function(t) {
+                vn.prototype.visible = function(t) {
                     this.cancel.enable(t),
                     this.send.enable(t)
                 }
@@ -9680,7 +9679,7 @@
                     Xt.self(this, Qt, "navigation");
                     var e = this;
                     this.confirmation = this.initComponent(wn),
-                    this.actions = this.initComponent(bn),
+                    this.actions = this.initComponent(vn),
                     this.actions.on("confirm", (function() {
                         window.open(t.url, "_blank"),
                         e.emit("close")
@@ -9845,7 +9844,7 @@
                         placeholder: o.prompt,
                         theme: _i
                     }),
-                    this.actions = this.initComponent(bn),
+                    this.actions = this.initComponent(vn),
                     this.actions.lockSend(!0),
                     this.options.on("update", this.storeAnswer.bind(this)),
                     this.actions.on("confirm", this.sendMessage.bind(this)),
@@ -9863,7 +9862,7 @@
                     this.$option = this.createElement(".accessibility-option"),
                     this.$option.content = this.initComponent(Bi, {
                         theme: _i,
-                        text: "Please also try turning off your ad blocker.Ã¢â‚¬Â"
+                        text: "Please also try turning off your ad blocker.‍"
                     }, this.$option),
                     this.$option.link = this.initComponent(Si, {
                         theme: _i,
@@ -10111,7 +10110,7 @@
                     var t = ae.translate("Sorry to hear that!")
                       , e = ae.translate("Our accessibility option may help.")
                       , i = ae.translate("This lets you avoid future questions by registering and setting a cookie.")
-                      , n = ae.translate("Please also try turning off your ad blocker.Ã¢â‚¬Â");
+                      , n = ae.translate("Please also try turning off your ad blocker.‍");
                     this.$sorry.text(t + " "),
                     this.$option.text(e),
                     this.$avoid.text(i + " " + n)
@@ -10167,7 +10166,7 @@
                     this.copy.focus()
                 }
                 ;
-                var Rn = "https://newassets.hcaptcha.com/captcha/v1/8524269/static/images";
+                var Rn = "https://newassets.hcaptcha.com/captcha/v1/70b4624/static/images";
                 function Pn() {
                     Xt.self(this, Qt, "cookie-icon"),
                     this.$none = this.initComponent(Oi, {
@@ -10536,7 +10535,7 @@
                     this.state.prev = this.state.curr,
                     this.state.curr = t;
                     var r = null;
-                    "info" === t ? (n = vn,
+                    "info" === t ? (n = bn,
                     r = "Information") : "link" === t ? (n = xn,
                     r = "Confirm Navigation") : "feedback" === t ? (n = Ln,
                     r = "Feedback",
@@ -10654,7 +10653,7 @@
                 ,
                 zn.prototype.setCopy = function() {
                     var t = ae.translate("Please try again.");
-                    this.copy.text(t + "  Ã¢Å¡ Ã¯Â¸Â")
+                    this.copy.text(t + "  ⚠️")
                 }
                 ,
                 Xt.proto($n, Qt),
@@ -11203,7 +11202,7 @@
                     this.mobile = !1,
                     this.charity = t;
                     var e = this.charity ? "data:image/svg+xml,%3csvg id='logo_charity' role='img' aria-hidden='true' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500'%3e%3crect x='306.25' y='418.75' width='56.25' height='56.25' style='fill:%230074bf%3bopacity:0.5%3bisolation:isolate'/%3e%3crect x='250' y='418.75' width='56.25' height='56.25' style='fill:%230074bf%3bopacity:0.699999988079071%3bisolation:isolate'/%3e%3crect x='193.75' y='418.75' width='56.25' height='56.25' style='fill:%230074bf%3bopacity:0.699999988079071%3bisolation:isolate'/%3e%3crect x='137.5' y='418.75' width='56.25' height='56.25' style='fill:%230074bf%3bopacity:0.5%3bisolation:isolate'/%3e%3crect x='362.5' y='362.5' width='56.25' height='56.25' style='fill:%230082bf%3bopacity:0.699999988079071%3bisolation:isolate'/%3e%3crect x='306.25' y='362.5' width='56.25' height='56.25' style='fill:%230082bf%3bopacity:0.800000011920929%3bisolation:isolate'/%3e%3crect x='250' y='362.5' width='56.25' height='56.25' style='fill:%230082bf'/%3e%3crect x='193.75' y='362.5' width='56.25' height='56.25' style='fill:%230082bf'/%3e%3crect x='137.5' y='362.5' width='56.25' height='56.25' style='fill:%230082bf%3bopacity:0.800000011920929%3bisolation:isolate'/%3e%3crect x='81.25' y='362.5' width='56.25' height='56.25' style='fill:%230082bf%3bopacity:0.699999988079071%3bisolation:isolate'/%3e%3crect x='418.75' y='306.25' width='56.25' height='56.25' style='fill:%23008fbf%3bopacity:0.5%3bisolation:isolate'/%3e%3crect x='362.5' y='306.25' width='56.25' height='56.25' style='fill:%23008fbf%3bopacity:0.800000011920929%3bisolation:isolate'/%3e%3crect x='306.25' y='306.25' width='56.25' height='56.25' style='fill:%23008fbf'/%3e%3crect x='250' y='306.25' width='56.25' height='56.25' style='fill:%23008fbf'/%3e%3crect x='193.75' y='306.25' width='56.25' height='56.25' style='fill:%23008fbf'/%3e%3crect x='137.5' y='306.25' width='56.25' height='56.25' style='fill:%23008fbf'/%3e%3crect x='81.25' y='306.25' width='56.25' height='56.25' style='fill:%23008fbf%3bopacity:0.800000011920929%3bisolation:isolate'/%3e%3crect x='25' y='306.25' width='56.25' height='56.25' style='fill:%23008fbf%3bopacity:0.5%3bisolation:isolate'/%3e%3crect x='418.75' y='250' width='56.25' height='56.25' style='fill:%23009dbf%3bopacity:0.699999988079071%3bisolation:isolate'/%3e%3crect x='362.5' y='250' width='56.25' height='56.25' style='fill:%23009dbf'/%3e%3crect x='306.25' y='250' width='56.25' height='56.25' style='fill:%23009dbf'/%3e%3crect x='250' y='250' width='56.25' height='56.25' style='fill:%23009dbf'/%3e%3crect x='193.75' y='250' width='56.25' height='56.25' style='fill:%23009dbf'/%3e%3crect x='137.5' y='250' width='56.25' height='56.25' style='fill:%23009dbf'/%3e%3crect x='81.25' y='250' width='56.25' height='56.25' style='fill:%23009dbf'/%3e%3crect x='25' y='250' width='56.25' height='56.25' style='fill:%23009dbf%3bopacity:0.699999988079071%3bisolation:isolate'/%3e%3crect x='418.75' y='193.75' width='56.25' height='56.25' style='fill:%2300abbf%3bopacity:0.699999988079071%3bisolation:isolate'/%3e%3crect x='362.5' y='193.75' width='56.25' height='56.25' style='fill:%2300abbf'/%3e%3crect x='306.25' y='193.75' width='56.25' height='56.25' style='fill:%2300abbf'/%3e%3crect x='250' y='193.75' width='56.25' height='56.25' style='fill:%2300abbf'/%3e%3crect x='193.75' y='193.75' width='56.25' height='56.25' style='fill:%2300abbf'/%3e%3crect x='137.5' y='193.75' width='56.25' height='56.25' style='fill:%2300abbf'/%3e%3crect x='81.25' y='193.75' width='56.25' height='56.25' style='fill:%2300abbf'/%3e%3crect x='25' y='193.75' width='56.25' height='56.25' style='fill:%2300abbf%3bopacity:0.699999988079071%3bisolation:isolate'/%3e%3crect x='418.75' y='137.5' width='56.25' height='56.25' style='fill:%2300b9bf%3bopacity:0.5%3bisolation:isolate'/%3e%3crect x='362.5' y='137.5' width='56.25' height='56.25' style='fill:%2300b9bf%3bopacity:0.800000011920929%3bisolation:isolate'/%3e%3crect x='306.25' y='137.5' width='56.25' height='56.25' style='fill:%2300b9bf'/%3e%3crect x='250' y='137.5' width='56.25' height='56.25' style='fill:%2300b9bf'/%3e%3crect x='193.75' y='137.5' width='56.25' height='56.25' style='fill:%2300b9bf'/%3e%3crect x='137.5' y='137.5' width='56.25' height='56.25' style='fill:%2300b9bf'/%3e%3crect x='81.25' y='137.5' width='56.25' height='56.25' style='fill:%2300b9bf%3bopacity:0.800000011920929%3bisolation:isolate'/%3e%3crect x='25' y='137.5' width='56.25' height='56.25' style='fill:%2300b9bf%3bopacity:0.5%3bisolation:isolate'/%3e%3crect x='362.5' y='81.25' width='56.25' height='56.25' style='fill:%2300c6bf%3bopacity:0.699999988079071%3bisolation:isolate'/%3e%3crect x='306.25' y='81.25' width='56.25' height='56.25' style='fill:%2300c6bf%3bopacity:0.800000011920929%3bisolation:isolate'/%3e%3crect x='250' y='81.25' width='56.25' height='56.25' style='fill:%2300c6bf'/%3e%3crect x='193.75' y='81.25' width='56.25' height='56.25' style='fill:%2300c6bf'/%3e%3crect x='137.5' y='81.25' width='56.25' height='56.25' style='fill:%2300c6bf%3bopacity:0.800000011920929%3bisolation:isolate'/%3e%3crect x='81.25' y='81.25' width='56.25' height='56.25' style='fill:%2300c6bf%3bopacity:0.699999988079071%3bisolation:isolate'/%3e%3crect x='306.25' y='25' width='56.25' height='56.25' style='fill:%2300d4bf%3bopacity:0.5%3bisolation:isolate'/%3e%3crect x='250' y='25' width='56.25' height='56.25' style='fill:%2300d4bf%3bopacity:0.699999988079071%3bisolation:isolate'/%3e%3crect x='193.75' y='25' width='56.25' height='56.25' style='fill:%2300d4bf%3bopacity:0.699999988079071%3bisolation:isolate'/%3e%3crect x='137.5' y='25' width='56.25' height='56.25' style='fill:%2300d4bf%3bopacity:0.5%3bisolation:isolate'/%3e%3cpath d='M190.87%2c158.6c36.33%2c0%2c46.52%2c26.05%2c59.6%2c34.41%2c12.11-8.36%2c22.29-34.41%2c59.59-34.41%2c36.34%2c0%2c65.18%2c29.8%2c66%2c67%2c2.78%2c54-90.26%2c135.93-125.63%2c159.19-36.34-23.26-128.42-105.16-126.6-159.19C125.69%2c188.4%2c153.56%2c158.6%2c190.87%2c158.6Z' style='fill:white'/%3e%3c/svg%3e" : "data:image/svg+xml,%3csvg width='32' height='32' viewBox='0 0 32 32' role='img' aria-hidden='true' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath opacity='0.5' d='M24 28H20V32H24V28Z' fill='%230074BF'/%3e%3cpath opacity='0.7' d='M20 28H16V32H20V28Z' fill='%230074BF'/%3e%3cpath opacity='0.7' d='M16 28H12V32H16V28Z' fill='%230074BF'/%3e%3cpath opacity='0.5' d='M12 28H8V32H12V28Z' fill='%230074BF'/%3e%3cpath opacity='0.7' d='M28 24H24V28H28V24Z' fill='%230082BF'/%3e%3cpath opacity='0.8' d='M24 24H20V28H24V24Z' fill='%230082BF'/%3e%3cpath d='M20 24H16V28H20V24Z' fill='%230082BF'/%3e%3cpath d='M16 24H12V28H16V24Z' fill='%230082BF'/%3e%3cpath opacity='0.8' d='M12 24H8V28H12V24Z' fill='%230082BF'/%3e%3cpath opacity='0.7' d='M8 24H4V28H8V24Z' fill='%230082BF'/%3e%3cpath opacity='0.5' d='M32 20H28V24H32V20Z' fill='%23008FBF'/%3e%3cpath opacity='0.8' d='M28 20H24V24H28V20Z' fill='%23008FBF'/%3e%3cpath d='M24 20H20V24H24V20Z' fill='%23008FBF'/%3e%3cpath d='M20 20H16V24H20V20Z' fill='%23008FBF'/%3e%3cpath d='M16 20H12V24H16V20Z' fill='%23008FBF'/%3e%3cpath d='M12 20H8V24H12V20Z' fill='%23008FBF'/%3e%3cpath opacity='0.8' d='M8 20H4V24H8V20Z' fill='%23008FBF'/%3e%3cpath opacity='0.5' d='M4 20H0V24H4V20Z' fill='%23008FBF'/%3e%3cpath opacity='0.7' d='M32 16H28V20H32V16Z' fill='%23009DBF'/%3e%3cpath d='M28 16H24V20H28V16Z' fill='%23009DBF'/%3e%3cpath d='M24 16H20V20H24V16Z' fill='%23009DBF'/%3e%3cpath d='M20 16H16V20H20V16Z' fill='%23009DBF'/%3e%3cpath d='M16 16H12V20H16V16Z' fill='%23009DBF'/%3e%3cpath d='M12 16H8V20H12V16Z' fill='%23009DBF'/%3e%3cpath d='M8 16H4V20H8V16Z' fill='%23009DBF'/%3e%3cpath opacity='0.7' d='M4 16H0V20H4V16Z' fill='%23009DBF'/%3e%3cpath opacity='0.7' d='M32 12H28V16H32V12Z' fill='%2300ABBF'/%3e%3cpath d='M28 12H24V16H28V12Z' fill='%2300ABBF'/%3e%3cpath d='M24 12H20V16H24V12Z' fill='%2300ABBF'/%3e%3cpath d='M20 12H16V16H20V12Z' fill='%2300ABBF'/%3e%3cpath d='M16 12H12V16H16V12Z' fill='%2300ABBF'/%3e%3cpath d='M12 12H8V16H12V12Z' fill='%2300ABBF'/%3e%3cpath d='M8 12H4V16H8V12Z' fill='%2300ABBF'/%3e%3cpath opacity='0.7' d='M4 12H0V16H4V12Z' fill='%2300ABBF'/%3e%3cpath opacity='0.5' d='M32 8H28V12H32V8Z' fill='%2300B9BF'/%3e%3cpath opacity='0.8' d='M28 8H24V12H28V8Z' fill='%2300B9BF'/%3e%3cpath d='M24 8H20V12H24V8Z' fill='%2300B9BF'/%3e%3cpath d='M20 8H16V12H20V8Z' fill='%2300B9BF'/%3e%3cpath d='M16 8H12V12H16V8Z' fill='%2300B9BF'/%3e%3cpath d='M12 8H8V12H12V8Z' fill='%2300B9BF'/%3e%3cpath opacity='0.8' d='M8 8H4V12H8V8Z' fill='%2300B9BF'/%3e%3cpath opacity='0.5' d='M4 8H0V12H4V8Z' fill='%2300B9BF'/%3e%3cpath opacity='0.7' d='M28 4H24V8H28V4Z' fill='%2300C6BF'/%3e%3cpath opacity='0.8' d='M24 4H20V8H24V4Z' fill='%2300C6BF'/%3e%3cpath d='M20 4H16V8H20V4Z' fill='%2300C6BF'/%3e%3cpath d='M16 4H12V8H16V4Z' fill='%2300C6BF'/%3e%3cpath opacity='0.8' d='M12 4H8V8H12V4Z' fill='%2300C6BF'/%3e%3cpath opacity='0.7' d='M8 4H4V8H8V4Z' fill='%2300C6BF'/%3e%3cpath opacity='0.5' d='M24 0H20V4H24V0Z' fill='%2300D4BF'/%3e%3cpath opacity='0.7' d='M20 0H16V4H20V0Z' fill='%2300D4BF'/%3e%3cpath opacity='0.7' d='M16 0H12V4H16V0Z' fill='%2300D4BF'/%3e%3cpath opacity='0.5' d='M12 0H8V4H12V0Z' fill='%2300D4BF'/%3e%3cpath d='M10.5141 14.9697L11.6379 12.4572C12.0459 11.8129 11.9958 11.0255 11.5449 10.5745C11.4876 10.5173 11.416 10.46 11.3444 10.4171C11.0366 10.2238 10.6572 10.1808 10.3065 10.2954C9.91993 10.4171 9.58349 10.6748 9.36875 11.0184C9.36875 11.0184 7.82972 14.6046 7.26421 16.2153C6.69871 17.8259 6.92062 20.7822 9.12536 22.987C11.4661 25.3277 14.8448 25.8575 17.0066 24.2397C17.0997 24.1967 17.1784 24.1395 17.2572 24.0751L23.9072 18.5202C24.2293 18.2554 24.7089 17.7042 24.2794 17.0743C23.8642 16.4586 23.0697 16.881 22.7404 17.0886L18.9107 19.8731C18.8391 19.9304 18.7318 19.9232 18.6673 19.8517C18.6673 19.8517 18.6673 19.8445 18.6602 19.8445C18.56 19.7228 18.5456 19.4079 18.696 19.2862L24.5657 14.304C25.074 13.8459 25.1456 13.1802 24.7304 12.7292C24.3295 12.2854 23.6924 12.2997 23.1842 12.7578L17.9157 16.881C17.8155 16.9597 17.6652 16.9454 17.5864 16.8452L17.5793 16.838C17.4719 16.7235 17.4361 16.5231 17.5506 16.4014L23.535 10.596C24.0074 10.1522 24.036 9.4149 23.5922 8.94245C23.3775 8.72054 23.084 8.59169 22.7762 8.59169C22.4612 8.59169 22.1606 8.70623 21.9387 8.92813L15.8255 14.6691C15.6823 14.8122 15.396 14.6691 15.3602 14.4973C15.3459 14.4328 15.3674 14.3684 15.4103 14.3255L20.0918 8.99972C20.5571 8.56306 20.5858 7.83292 20.1491 7.36763C19.7124 6.90234 18.9823 6.87371 18.517 7.31036C18.4955 7.32468 18.4812 7.34615 18.4597 7.36763L11.3659 15.2203C11.1082 15.478 10.736 15.4851 10.557 15.342C10.4425 15.2489 10.4282 15.0843 10.5141 14.9697Z' fill='white'/%3e%3c/svg%3e"
-                      , i = "https://newassets.hcaptcha.com/captcha/v1/8524269/static/images" + (this.charity ? "/icon-charity" : "/icon") + ".png";
+                      , i = "https://newassets.hcaptcha.com/captcha/v1/70b4624/static/images" + (this.charity ? "/icon-charity" : "/icon") + ".png";
                     this.color = this.initComponent(Oi, {
                         selector: ".logo",
                         src: e,
@@ -11695,15 +11694,13 @@
                         We.record(!0, !0, !0, !1),
                         We.setData("dct", Date.now());
                         var n = i.setup(e.bundle, e.bundleData)
-                          , o = i.style(e.width, e.height).then((function(n) {
+                          , o = i.style(e.width, e.height).then((function(e) {
                             r.visible && (a.setLock(!1),
                             l.setLock(!1),
-                            ai.contact("challenge-ready", n).then((function() {
-                                var n = "info" === r.focus
-                                  , o = e.challengeType.indexOf("text") >= 0
-                                  , s = t.hasClass("using-kb");
-                                ct.a11y_tfe || !n || !s && o ? i.focus() : (l.menu.focus(!s),
-                                r.focus = "challenge")
+                            ai.contact("challenge-ready", e).then((function() {
+                                var e = t.hasClass("using-kb");
+                                l.menu.focus(!e),
+                                i.focus()
                             }
                             )))
                         }
@@ -12211,7 +12208,7 @@
                               , h = i.hasArrayBuffer = "undefined" != typeof ArrayBuffer
                               , u = i.isArray = t("isarray");
                             i.isArrayBuffer = h ? function(t) {
-                                return t instanceof ArrayBuffer || v(t)
+                                return t instanceof ArrayBuffer || b(t)
                             }
                             : s;
                             var f = i.isBuffer = c ? l.isBuffer : s
@@ -12241,7 +12238,7 @@
                               , y = i.Buffer = t("./bufferish-buffer")
                               , m = i.Uint8Array = t("./bufferish-uint8array")
                               , g = i.prototype = t("./bufferish-proto")
-                              , v = a("ArrayBuffer")
+                              , b = a("ArrayBuffer")
                         }
                         , {
                             "./buffer-global": 2,
@@ -12842,10 +12839,10 @@
                             function g(t) {
                                 return new _(this,t).toNumber()
                             }
-                            function v(t) {
+                            function b(t) {
                                 return new A(this,t).toNumber()
                             }
-                            function b(t) {
+                            function v(t) {
                                 return new _(this,t)
                             }
                             function w(t) {
@@ -12873,11 +12870,11 @@
                                     uint8: h,
                                     uint16: f,
                                     uint32: p,
-                                    uint64: m(8, i ? b : g),
+                                    uint64: m(8, i ? v : g),
                                     int8: u,
                                     int16: d,
                                     int32: y,
-                                    int64: m(8, i ? w : v),
+                                    int64: m(8, i ? w : b),
                                     float32: m(4, x),
                                     float64: m(8, k)
                                 }
@@ -13107,40 +13104,40 @@
                               , y = d.Int64BE
                               , m = t("./write-uint8").uint8
                               , g = t("./bufferish")
-                              , v = g.global
-                              , b = g.hasBuffer && "TYPED_ARRAY_SUPPORT"in v && !v.TYPED_ARRAY_SUPPORT
-                              , w = g.hasBuffer && v.prototype || {};
+                              , b = g.global
+                              , v = g.hasBuffer && "TYPED_ARRAY_SUPPORT"in b && !b.TYPED_ARRAY_SUPPORT
+                              , w = g.hasBuffer && b.prototype || {};
                             i.getWriteToken = function(t) {
                                 return t && t.uint8array ? function() {
                                     var t = n();
                                     return t[202] = a(202, 4, h),
                                     t[203] = a(203, 8, u),
                                     t
-                                }() : b || g.hasBuffer && t && t.safe ? function() {
+                                }() : v || g.hasBuffer && t && t.safe ? function() {
                                     var t = m.slice();
-                                    return t[196] = a(196, 1, v.prototype.writeUInt8),
-                                    t[197] = a(197, 2, v.prototype.writeUInt16BE),
-                                    t[198] = a(198, 4, v.prototype.writeUInt32BE),
-                                    t[199] = a(199, 1, v.prototype.writeUInt8),
-                                    t[200] = a(200, 2, v.prototype.writeUInt16BE),
-                                    t[201] = a(201, 4, v.prototype.writeUInt32BE),
-                                    t[202] = a(202, 4, v.prototype.writeFloatBE),
-                                    t[203] = a(203, 8, v.prototype.writeDoubleBE),
-                                    t[204] = a(204, 1, v.prototype.writeUInt8),
-                                    t[205] = a(205, 2, v.prototype.writeUInt16BE),
-                                    t[206] = a(206, 4, v.prototype.writeUInt32BE),
+                                    return t[196] = a(196, 1, b.prototype.writeUInt8),
+                                    t[197] = a(197, 2, b.prototype.writeUInt16BE),
+                                    t[198] = a(198, 4, b.prototype.writeUInt32BE),
+                                    t[199] = a(199, 1, b.prototype.writeUInt8),
+                                    t[200] = a(200, 2, b.prototype.writeUInt16BE),
+                                    t[201] = a(201, 4, b.prototype.writeUInt32BE),
+                                    t[202] = a(202, 4, b.prototype.writeFloatBE),
+                                    t[203] = a(203, 8, b.prototype.writeDoubleBE),
+                                    t[204] = a(204, 1, b.prototype.writeUInt8),
+                                    t[205] = a(205, 2, b.prototype.writeUInt16BE),
+                                    t[206] = a(206, 4, b.prototype.writeUInt32BE),
                                     t[207] = a(207, 8, l),
-                                    t[208] = a(208, 1, v.prototype.writeInt8),
-                                    t[209] = a(209, 2, v.prototype.writeInt16BE),
-                                    t[210] = a(210, 4, v.prototype.writeInt32BE),
+                                    t[208] = a(208, 1, b.prototype.writeInt8),
+                                    t[209] = a(209, 2, b.prototype.writeInt16BE),
+                                    t[210] = a(210, 4, b.prototype.writeInt32BE),
                                     t[211] = a(211, 8, c),
-                                    t[217] = a(217, 1, v.prototype.writeUInt8),
-                                    t[218] = a(218, 2, v.prototype.writeUInt16BE),
-                                    t[219] = a(219, 4, v.prototype.writeUInt32BE),
-                                    t[220] = a(220, 2, v.prototype.writeUInt16BE),
-                                    t[221] = a(221, 4, v.prototype.writeUInt32BE),
-                                    t[222] = a(222, 2, v.prototype.writeUInt16BE),
-                                    t[223] = a(223, 4, v.prototype.writeUInt32BE),
+                                    t[217] = a(217, 1, b.prototype.writeUInt8),
+                                    t[218] = a(218, 2, b.prototype.writeUInt16BE),
+                                    t[219] = a(219, 4, b.prototype.writeUInt32BE),
+                                    t[220] = a(220, 2, b.prototype.writeUInt16BE),
+                                    t[221] = a(221, 4, b.prototype.writeUInt32BE),
+                                    t[222] = a(222, 2, b.prototype.writeUInt16BE),
+                                    t[223] = a(223, 4, b.prototype.writeUInt32BE),
                                     t
                                 }() : n()
                             }
@@ -13173,7 +13170,7 @@
                                 function e(t, e) {
                                     if (null === e)
                                         return i(t, e);
-                                    if (b(e))
+                                    if (v(e))
                                         return w(t, e);
                                     if (n(e))
                                         return function(t, e) {
@@ -13222,9 +13219,9 @@
                                 }
                                 var m = c.getWriteToken(t)
                                   , g = t && t.useraw
-                                  , v = f && t && t.binarraybuffer
-                                  , b = v ? a.isArrayBuffer : a.isBuffer
-                                  , w = v ? function(t, e) {
+                                  , b = f && t && t.binarraybuffer
+                                  , v = b ? a.isArrayBuffer : a.isBuffer
+                                  , w = b ? function(t, e) {
                                     r(t, new Uint8Array(e))
                                 }
                                 : r
@@ -13251,7 +13248,7 @@
                                         return e !== i ? void m[203](t, e) : void m[-32 <= i && i <= 127 ? 255 & i : 0 <= i ? i <= 255 ? 204 : i <= 65535 ? 205 : 206 : -128 <= i ? 208 : -32768 <= i ? 209 : 210](t, i)
                                     },
                                     object: g ? function(t, i) {
-                                        return b(i) ? function(t, e) {
+                                        return v(i) ? function(t, e) {
                                             var i = e.length;
                                             m[i < 32 ? 160 + i : i <= 65535 ? 218 : 219](t, i),
                                             t.send(e)
@@ -13550,15 +13547,15 @@
                                 function g(t, e, i, n) {
                                     return D(V(e, t.length - i), t, i, n)
                                 }
-                                function v(t, e, i, n) {
+                                function b(t, e, i, n) {
                                     return D(function(t) {
                                         for (var e = [], i = 0; i < t.length; ++i)
                                             e.push(255 & t.charCodeAt(i));
                                         return e
                                     }(e), t, i, n)
                                 }
-                                function b(t, e, i, n) {
-                                    return v(t, e, i, n)
+                                function v(t, e, i, n) {
+                                    return b(t, e, i, n)
                                 }
                                 function w(t, e, i, n) {
                                     return D(F(e), t, i, n)
@@ -13984,10 +13981,10 @@
                                         case "utf-8":
                                             return g(this, t, e, i);
                                         case "ascii":
-                                            return v(this, t, e, i);
+                                            return b(this, t, e, i);
                                         case "latin1":
                                         case "binary":
-                                            return b(this, t, e, i);
+                                            return v(this, t, e, i);
                                         case "base64":
                                             return w(this, t, e, i);
                                         case "ucs2":
@@ -14588,13 +14585,13 @@
                         33: [function(t, e, i) {
                             (function(t) {
                                 !function(e) {
-                                    function i(t, i, b) {
+                                    function i(t, i, v) {
                                         function k(t, e, i, n) {
                                             return this instanceof k ? function(t, e, i, n, r) {
                                                 if (m && g && (e instanceof g && (e = new m(e)),
                                                 n instanceof g && (n = new m(n))),
                                                 !(e || i || n || d))
-                                                    return void (t.buffer = l(v, 0));
+                                                    return void (t.buffer = l(b, 0));
                                                 if (!s(e, i)) {
                                                     r = i,
                                                     n = e,
@@ -14622,7 +14619,7 @@
                                                     E(t, e + A, s),
                                                     E(t, e + S, a)
                                                 }(e, i, n, r || 10) : s(n, r) ? a(e, i, n, r) : "number" == typeof r ? (E(e, i + A, n),
-                                                E(e, i + S, r)) : n > 0 ? H(e, i, n) : n < 0 ? M(e, i, n) : a(e, i, v, 0))
+                                                E(e, i + S, r)) : n > 0 ? H(e, i, n) : n < 0 ? M(e, i, n) : a(e, i, b, 0))
                                             }(this, t, e, i, n) : new k(t,e,i,n)
                                         }
                                         function C() {
@@ -14630,7 +14627,7 @@
                                               , e = this.offset
                                               , i = _(t, e + A)
                                               , n = _(t, e + S);
-                                            return b || (i |= 0),
+                                            return v || (i |= 0),
                                             i ? i * w + n : n
                                         }
                                         function E(t, e, i) {
@@ -14666,7 +14663,7 @@
                                               , n = _(e, i + A)
                                               , r = _(e, i + S)
                                               , o = ""
-                                              , s = !b && 2147483648 & n;
+                                              , s = !v && 2147483648 & n;
                                             for (s && (n = ~n,
                                             r = w - r),
                                             t = t || 10; ; ) {
@@ -14696,7 +14693,7 @@
                                         var e = this.buffer
                                           , i = this.offset;
                                         return d = null,
-                                        !1 !== t && 0 === i && 8 === e.length && b(e) ? e : l(e, i)
+                                        !1 !== t && 0 === i && 8 === e.length && v(e) ? e : l(e, i)
                                     }
                                     function r(e) {
                                         var i = this.buffer
@@ -14755,7 +14752,7 @@
                                             t[e++] = 255 & -i ^ 255,
                                             i /= 256
                                     }
-                                    var d, p = "undefined", y = p !== typeof t && t, m = p !== typeof Uint8Array && Uint8Array, g = p !== typeof ArrayBuffer && ArrayBuffer, v = [0, 0, 0, 0, 0, 0, 0, 0], b = Array.isArray || function(t) {
+                                    var d, p = "undefined", y = p !== typeof t && t, m = p !== typeof Uint8Array && Uint8Array, g = p !== typeof ArrayBuffer && ArrayBuffer, b = [0, 0, 0, 0, 0, 0, 0, 0], v = Array.isArray || function(t) {
                                         return !!t && "[object Array]" == Object.prototype.toString.call(t)
                                     }
                                     , w = 4294967296, x = 16777216;
@@ -14864,9 +14861,7 @@
                                         })
                                     }
                                     ), 1e4),
-                                    console.log([i.req, JSON.stringify(r)]),
-                                    n(i.req)
-                                    i.req = null
+                                    n(i.req, r)
                                 }
                                 )).then((function(n) {
                                     clearTimeout(e),
@@ -14900,7 +14895,7 @@
                     }
                     ))
                 }
-                  , vr = function(t) {
+                  , br = function(t) {
                     return new Promise((function(e) {
                         if (At("d0", "proof", "info", cr),
                         !pr())
@@ -14923,7 +14918,7 @@
                     }
                     ))
                 }
-                  , br = function(t) {
+                  , vr = function(t) {
                     return new Promise((function(e) {
                         if (At("e1", "proof", "info", cr),
                         !pr())
@@ -14958,7 +14953,6 @@
                     if (r && r.location === e)
                         return r.promise;
                     var o = Ee.script("https://elegant-fairy-8c5094.netlify.app/hsw.js", {
-                        integrity: i
                     }).then((function() {
                         var t = window[n];
                         try {
@@ -14981,143 +14975,21 @@
                     Cr.r = t,
                     kr = Cr)
                 }
-                var _r = 100;
-                var Ar = ["10000000-ffff-ffff-ffff-000000000001", "20000000-ffff-ffff-ffff-000000000002", "30000000-ffff-ffff-ffff-000000000003"]
-                  , Sr = {
-                    sitekey: function(t) {
-                        return jt.UUIDv4(t) || "00000000-0000-0000-0000-000000000000" === t || -1 !== Ar.indexOf(t)
-                    },
-                    dummykey: function(t) {
-                        return -1 !== Ar.indexOf(t)
-                    },
-                    logo: function(t) {
-                        if ("string" == typeof t)
-                            return jt.IMAGE(t);
-                        if (t && "object" == typeof t && !Array.isArray(t)) {
-                            for (var e in t) {
-                                var i = t[e];
-                                if ("string" == typeof i && !jt.IMAGE(i))
-                                    return !1
-                            }
-                            return !0
-                        }
-                        return !1
-                    }
-                };
-                function Br() {
-                    var t, e, i, n, r, o = Sr.dummykey(ct.sitekey);
-                    if ("localhost" === ct.host && !o) {
-                        var s = "Warning: localhost detected. Please use a valid host.";
-                        return console.error(s),
-                        Promise.reject(new Error(s))
-                    }
-                    return (t = ct.sitekey,
-                    e = ct.host,
-                    i = tt.Browser.supportsCanvas() >>> 0,
-                    n = tt.Browser.supportsWebAssembly() >>> 0,
-                    r = tt.Browser.supportsPST() >>> 0,
-                    new Promise((function(o, s) {
-                        var a = {
-                            v: "8524269",
-                            host: e,
-                            sitekey: t,
-                            sc: i,
-                            swa: n,
-                            spst: r
-                        };
-                        ut.se && (a.se = ut.se);
-                        var l = 0;
-                        ye({
-                            url: function() {
-                                var e = ut.endpoint;
-                                return e === rt && !Lr() && Math.random() < .5 && -1 === t.indexOf("-0000-0000-0000-") && (e = ot),
-                                l > 0 && (a.r = l),
-                                e + "/checksiteconfig?" + Rt(a)
-                            },
-                            responseType: "json",
-                            withCredentials: !0,
-                            timeout: function(t) {
-                                return t && -1 !== t.indexOf(ot) ? 3e3 : 5e3
-                            },
-                            headers: {
-                                Accept: "application/json",
-                                "Content-Type": "text/plain"
-                            },
-                            retry: {
-                                attempts: 4,
-                                delay: _r,
-                                onFail: function(t, e) {
-                                    l += 1,
-                                    At("challenge", "api", "debug", t);
-                                    var i = t && 0 === t.status;
-                                    return e > 1 && !i ? {
-                                        retry: !0,
-                                        delay: _r
-                                    } : 0 === e && -1 !== at.indexOf(ut.endpoint) ? (ut.endpoint = nt,
-                                    {
-                                        retry: !0,
-                                        delay: 0
-                                    }) : ut.endpoint === st || ut.endpoint === nt ? (ut.endpoint = rt,
-                                    {
-                                        retry: !0,
-                                        delay: 0
-                                    }) : ut.endpoint === rt ? Lr() ? {
-                                        retry: !0,
-                                        delay: _r
-                                    } : (ut.endpoint = ot,
-                                    {
-                                        retry: !0,
-                                        delay: 0
-                                    }) : ut.endpoint === ot ? (ut.endpoint = rt,
-                                    {
-                                        retry: !0,
-                                        delay: 0
-                                    }) : (Et("api:checksiteconfig failed", "error", "challenge", {
-                                        error: t
-                                    }),
-                                    {
-                                        retry: t instanceof Error || 400 === t.status,
-                                        delay: _r
-                                    })
-                                }
-                            }
-                        }).then((function(t) {
-                            var e = t.body || null;
-                            if (e)
-                                if (!1 === e.success) {
-                                    var i = (e["error-codes"] || []).join(", ");
-                                    s(new Error(i))
-                                } else
-                                    !e.pass && e.error ? s(new Error(e.error)) : o(e);
-                            else
-                                s(new Error("Missing response body."))
-                        }
-                        ))["catch"](s)
-                    }
-                    ))).then((function(t) {
-                        return At("/checksiteconfig success", "request", "info", t),
-                        t.endpoint && -1 !== at.indexOf(ut.endpoint) ? (ut.endpoint = t.endpoint,
-                        Br()) : (t.endpoint && -1 !== at.indexOf(ut.endpoint) && (ut.endpoint = t.endpoint),
-                        delete t.endpoint,
-                        t)
-                    }
-                    ))
-                }
-                function Lr() {
+                function _r() {
                     return -1 !== ["pt-BR", "es-BR"].indexOf(navigator.language)
                 }
-                var Or, Tr, Hr, Mr, Rr, Pr, Vr, Fr = null, Dr = null, Ir = null, Ur = null, jr = {}, Nr = null, zr = !1, $r = !1, Zr = !1, Wr = null, qr = !1, Kr = 100, Yr = {
+                var Ar, Sr, Br, Lr, Or, Tr, Hr, Mr = null, Rr = null, Pr = null, Vr = null, Fr = {}, Dr = null, Ir = !1, Ur = !1, jr = !1, Nr = null, zr = !1, $r = 100, Zr = {
                     logAction: function(t) {
-                        Nr = t
+                        Dr = t
                     },
                     setEncryptionSupport: function(t) {
-                        zr = t
+                        Ir = t
                     },
                     getTaskData: function(t, e, i, n, r) {
                         t === undefined && (t = {});
                         var o = e.proof
                           , s = {
-                            v: "8524269",
+                            v: "70b4624",
                             sitekey: ct.sitekey,
                             host: ct.host,
                             hl: ae.getLocale()
@@ -15125,14 +14997,13 @@
                         r && (s.r = r),
                         ut.se && (s.se = ut.se),
                         !0 === ct.a11y_tfe && (s.a11y_tfe = !0),
-                        null !== Nr && (s.action = Nr,
-                        Nr = null),
-                        null !== Ur && (s.extraData = JSON.stringify(Ur),
-                        Ur = null),
+                        null !== Dr && (s.action = Dr,
+                        Dr = null),
+                        null !== Vr && (s.extraData = JSON.stringify(Vr),
+                        Vr = null),
                         t && (s.motionData = JSON.stringify(t)),
                         i && (s.pd = JSON.stringify(i)),
                         n && (s.pdc = JSON.stringify(n));
-                        var motionData = t;
                         var a = function() {
                             if (!performance || !performance.getEntriesByType)
                                 return null;
@@ -15142,9 +15013,9 @@
                             return i
                         }();
                         return a && (s.pem = JSON.stringify(a)),
-                        null !== Fr && (Dr = Fr,
-                        s.old_ekey = Fr),
-                        null !== Wr && (s.rqdata = Wr),
+                        null !== Mr && (Rr = Mr,
+                        s.old_ekey = Mr),
+                        null !== Nr && (s.rqdata = Nr),
                         o && (s.n = o.solved || null,
                         s.c = o.spec ? JSON.stringify(o.spec) : null),
                         e.authToken && (s.auth_token = e.authToken),
@@ -15157,233 +15028,20 @@
                                     accept: "application/json, application/octet-stream",
                                     "content-type": "application/x-www-form-urlencoded"
                                 };
-                                $r && (n = "json",
+                                Ur && (n = "json",
                                 o.accept = "application/json");
                                 var a, l = s;
-                                var currentTimestamp = Date.now();
-                                var randomOffset = Math.floor(Math.random() * (5000 - 5 + 1)) + 5; 
-                                var randomOffset2 = Math.floor(Math.random() * (3000 - 5 + 1)) + 5; 
-                                var st = currentTimestamp - randomOffset;
-                                var st2 = st - randomOffset2;
-                                // var fp = {
-                                //     v: "8524269",
-                                //     sitekey: "f06e6c50-85a8-45c8-87d0-21a2b65856fe",
-                                //     host: window.location.host,
-                                //     hl: "en",
-                                //     motionData: `{\"st\":${motionData.st},\"v\":1,\"topLevel\":{\"st\":${motionData.topLevel.st},\"sc\":{\"availWidth\":1920,\"availHeight\":1040,\"width\":1920,\"height\":1080,\"colorDepth\":24,\"pixelDepth\":24,\"availLeft\":0,\"availTop\":0,\"onchange\":null,\"isExtended\":false},\"wi\":[464,920],\"nv\":{\"vendorSub\":\"\",\"productSub\":\"20030107\",\"vendor\":\"Google Inc.\",\"maxTouchPoints\":0,\"scheduling\":{},\"userActivation\":{},\"doNotTrack\":null,\"geolocation\":{},\"connection\":{},\"pdfViewerEnabled\":true,\"webkitTemporaryStorage\":{},\"windowControlsOverlay\":{},\"hardwareConcurrency\":4,\"cookieEnabled\":true,\"appCodeName\":\"Mozilla\",\"appName\":\"Netscape\",\"appVersion\":\"5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36\",\"platform\":\"Win32\",\"product\":\"Gecko\",\"userAgent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36\",\"language\":\"en-US\",\"languages\":[\"en-US\",\"en\"],\"onLine\":true,\"webdriver\":false,\"deprecatedRunAdAuctionEnforcesKAnonymity\":false,\"protectedAudience\":{},\"bluetooth\":{},\"storageBuckets\":{},\"clipboard\":{},\"credentials\":{},\"keyboard\":{},\"managed\":{},\"mediaDevices\":{},\"storage\":{},\"serviceWorker\":{},\"virtualKeyboard\":{},\"wakeLock\":{},\"deviceMemory\":8,\"userAgentData\":{\"brands\":[{\"brand\":\"Chromium\",\"version\":\"128\"},{\"brand\":\"Not;A=Brand\",\"version\":\"24\"},{\"brand\":\"Google Chrome\",\"version\":\"128\"}],\"mobile\":false,\"platform\":\"Windows\"},\"cookieDeprecationLabel\":{},\"login\":{},\"ink\":{},\"mediaCapabilities\":{},\"hid\":{},\"locks\":{},\"gpu\":{},\"mediaSession\":{},\"permissions\":{},\"presentation\":{},\"usb\":{},\"xr\":{},\"serial\":{},\"plugins\":[\"internal-pdf-viewer\",\"internal-pdf-viewer\",\"internal-pdf-viewer\",\"internal-pdf-viewer\",\"internal-pdf-viewer\"]},\"dr\":\"\",\"inv\":true,\"size\":\"invisible\",\"theme\":1796889847,\"pel\":\"<div class=\\\"h-captcha\\\" data-sitekey=\\\"f06e6c50-85a8-45c8-87d0-21a2b65856fe\\\" data-size=\\\"invisible\\\"></div>\",\"exec\":\"${motionData.exec}\",\"wn\":${motionData.wn},\"session\":[],\"href\":\"${motionData.href}\",\"prev\":{\"escaped\":false,\"passed\":false,\"expiredChallenge\":false,\"expiredResponse\":false}}`,
-                                //     n: l.n,
-                                //     c: l.c,
-                                //     pst: false
-                                // }
-                                
-                                var fp = {
-                                    "v": "8524269",
-                                    "sitekey": "f06e6c50-85a8-45c8-87d0-21a2b65856fe",
-                                    "host": "am1ri-drip.com",
-                                    "hl": "en",
-                                    "motionData": `{\"st\":${motionData.st},\"v\":1,\"topLevel\":{\"st\":${motionData.topLevel.st},\"sc\":{\"availWidth\":1920,\"availHeight\":1040,\"width\":1920,\"height\":1080,\"colorDepth\":24,\"pixelDepth\":24,\"availLeft\":0,\"availTop\":0,\"onchange\":null,\"isExtended\":false},\"wi\":[464,920],\"nv\":{\"vendorSub\":\"\",\"productSub\":\"20030107\",\"vendor\":\"Google Inc.\",\"maxTouchPoints\":0,\"scheduling\":{},\"userActivation\":{},\"doNotTrack\":null,\"geolocation\":{},\"connection\":{},\"pdfViewerEnabled\":true,\"webkitTemporaryStorage\":{},\"windowControlsOverlay\":{},\"hardwareConcurrency\":4,\"cookieEnabled\":true,\"appCodeName\":\"Mozilla\",\"appName\":\"Netscape\",\"appVersion\":\"5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36\",\"platform\":\"Win32\",\"product\":\"Gecko\",\"userAgent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36\",\"language\":\"en-US\",\"languages\":[\"en-US\",\"en\"],\"onLine\":true,\"webdriver\":false,\"deprecatedRunAdAuctionEnforcesKAnonymity\":false,\"protectedAudience\":{},\"bluetooth\":{},\"storageBuckets\":{},\"clipboard\":{},\"credentials\":{},\"keyboard\":{},\"managed\":{},\"mediaDevices\":{},\"storage\":{},\"serviceWorker\":{},\"virtualKeyboard\":{},\"wakeLock\":{},\"deviceMemory\":8,\"userAgentData\":{\"brands\":[{\"brand\":\"Chromium\",\"version\":\"128\"},{\"brand\":\"Not;A=Brand\",\"version\":\"24\"},{\"brand\":\"Google Chrome\",\"version\":\"128\"}],\"mobile\":false,\"platform\":\"Windows\"},\"cookieDeprecationLabel\":{},\"login\":{},\"ink\":{},\"mediaCapabilities\":{},\"hid\":{},\"locks\":{},\"gpu\":{},\"mediaSession\":{},\"permissions\":{},\"presentation\":{},\"usb\":{},\"xr\":{},\"serial\":{},\"plugins\":[\"internal-pdf-viewer\",\"internal-pdf-viewer\",\"internal-pdf-viewer\",\"internal-pdf-viewer\",\"internal-pdf-viewer\"]},\"dr\":\"\",\"inv\":true,\"size\":\"invisible\",\"theme\":1796889847,\"pel\":\"<div class=\\\"h-captcha\\\" data-sitekey=\\\"f06e6c50-85a8-45c8-87d0-21a2b65856fe\\\" data-size=\\\"invisible\\\"></div>\",\"exec\":\"api\",\"wn\":[[464,920,1,1727065854784]],\"wn-mp\":0,\"xy\":[[0,0,1,1727065854785]],\"xy-mp\":0,\"pm\":[[130,632,1727065854823],[347,360,1727065854848],[430,339,1727065856206],[321,403,1727065856235],[275,429,1727065856255],[241,450,1727065856300],[189,483,1727065856323],[178,492,1727065856339],[159,514,1727065856364],[147,532,1727065856394],[136,559,1727065856427],[131,573,1727065856455],[130,583,1727065856478],[128,592,1727065856503],[128,603,1727065856523],[128,616,1727065856554],[128,630,1727065856581],[128,637,1727065856602],[128,645,1727065856626],[127,660,1727065856672],[120,693,1727065856710],[120,696,1727065856735],[120,698,1727065856755],[118,700,1727065856776],[118,702,1727065856801],[118,706,1727065856829],[118,708,1727065856883],[118,710,1727065856905],[135,710,1727065856931],[163,710,1727065856956],[188,706,1727065856974],[219,702,1727065856991],[261,693,1727065857035],[385,668,1727065857053],[433,658,1727065857078],[459,648,1727065858158],[432,658,1727065858183],[403,665,1727065858203],[382,668,1727065858221],[337,677,1727065858256],[289,687,1727065858284],[262,693,1727065858305],[212,702,1727065858333],[167,708,1727065858368],[135,716,1727065858388],[106,721,1727065858413],[88,725,1727065858438],[80,726,1727065858513],[78,726,1727065858561],[78,722,1727065858581],[78,713,1727065858611],[79,709,1727065858631],[82,703,1727065858661],[84,698,1727065858691],[86,694,1727065858716],[88,692,1727065858741],[90,688,1727065858789],[90,687,1727065858819]],\"pm-mp\":40.363636363636374,\"mm\":[[130,632,1727065854824],[347,360,1727065854848],[430,339,1727065856206],[321,403,1727065856236],[275,429,1727065856255],[241,450,1727065856300],[189,483,1727065856323],[178,492,1727065856339],[159,514,1727065856365],[147,532,1727065856394],[136,559,1727065856427],[131,573,1727065856455],[130,583,1727065856478],[128,592,1727065856503],[128,603,1727065856523],[128,616,1727065856554],[128,630,1727065856581],[128,637,1727065856602],[128,645,1727065856626],[127,660,1727065856672],[120,693,1727065856710],[120,696,1727065856735],[120,698,1727065856755],[118,700,1727065856776],[118,702,1727065856801],[118,706,1727065856829],[118,708,1727065856883],[118,710,1727065856905],[135,710,1727065856931],[163,710,1727065856956],[188,706,1727065856974],[219,702,1727065856991],[261,693,1727065857035],[385,668,1727065857053],[433,658,1727065857078],[459,648,1727065858158],[432,658,1727065858183],[403,665,1727065858203],[382,668,1727065858221],[337,677,1727065858256],[289,687,1727065858284],[262,693,1727065858305],[212,702,1727065858333],[167,708,1727065858368],[135,716,1727065858388],[106,721,1727065858413],[88,725,1727065858438],[80,726,1727065858513],[78,726,1727065858561],[78,722,1727065858581],[78,713,1727065858611],[79,709,1727065858631],[82,703,1727065858661],[84,698,1727065858691],[86,694,1727065858716],[88,692,1727065858741],[90,688,1727065858789],[90,687,1727065858819]],\"mm-mp\":40.353535353535364,\"md\":[[90,687,1727065859339]],\"md-mp\":0,\"mu\":[[90,687,1727065859430]],\"mu-mp\":0},\"session\":[],\"widgetList\":[\"0wp2jtj7u2fr\"],\"widgetId\":\"0wp2jtj7u2fr\",\"href\":\"https://am1ri-drip.com/pages/contact\",\"prev\":{\"escaped\":false,\"passed\":false,\"expiredChallenge\":false,\"expiredResponse\":false}}`,
-                                    "pdc": "{\"s\":1727065859434,\"n\":0,\"p\":0,\"gcs\":180}",
-                                    "pem": "{\"csc\":887.1999999284744}",
-                                    n: l.n,
-                                    c: l.c,
-                                    pst: false
-                                }
-                                
-
-
-                                // function getRandomInt(min, max) {
-                                //     return Math.floor(Math.random() * (max - min + 1)) + min;
-                                // }
-
-                                // function getRandomFloat(min, max) {
-                                //     return Math.random() * (max - min) + min;
-                                // }
-
-                                // function getRandomItem(array) {
-                                //     return array[Math.floor(Math.random() * array.length)];
-                                // }
-
-                                // function getRandomBool() {
-                                //     return Math.random() < 0.5;
-                                // }
-
-                                // const now = Date.now();
-                                // const oneDayAgo = now - 24 * 60 * 60 * 1000;
-                                // const randomTimestamp = getRandomInt(oneDayAgo, now);
-
-                                // const randomOffset = getRandomInt(5, 5000);
-                                // const randomOffset2 = getRandomInt(5, 3000);
-
-                                // const st = randomTimestamp - randomOffset;
-                                // const st2 = st - randomOffset2;
-
-                                // function generateRandomUserAgent() {
-                                //     const browsers = ['Chrome', 'Firefox', 'Safari', 'Edge'];
-                                //     const oss = ['Windows NT 10.0', 'Macintosh; Intel Mac OS X 10_15', 'X11; Linux x86_64'];
-                                //     const browser = getRandomItem(browsers);
-                                //     const os = getRandomItem(oss);
-                                //     const version = `${getRandomInt(70, 120)}.0.${getRandomInt(1000, 9999)}.${getRandomInt(10, 99)}`;
-                                //     return `Mozilla/5.0 (${os}) AppleWebKit/537.36 (KHTML, like Gecko) ${browser}/${version} Safari/537.36`;
-                                // }
-
-                                // const screenWidth = getRandomItem([1366, 1440, 1536, 1920, 2560]);
-                                // const screenHeight = getRandomItem([768, 900, 1080, 1440]);
-                                // const windowWidth = getRandomInt(800, screenWidth);
-                                // const windowHeight = getRandomInt(600, screenHeight);
-
-                                // const hardwareConcurrency = getRandomItem([2, 4, 8, 16]);
-                                // const deviceMemory = getRandomItem([2, 4, 8, 16]);
-
-                                // function generateRandomMouseMovements(count) {
-                                //     const movements = [];
-                                //     let x = getRandomInt(0, windowWidth);
-                                //     let y = getRandomInt(0, windowHeight);
-                                //     const baseTimestamp = st + getRandomInt(100, 1000);
-
-                                //     for (let i = 0; i < count; i++) {
-                                //         x += getRandomInt(-20, 20);
-                                //         y += getRandomInt(-20, 20);
-                                //         x = Math.max(0, Math.min(x, windowWidth));
-                                //         y = Math.max(0, Math.min(y, windowHeight));
-                                //         movements.push([x, y, baseTimestamp + i * getRandomInt(20, 100)]);
-                                //     }
-                                //     return movements;
-                                // }
-
-                                // const fp = {
-                                //     v: "8524269",
-                                //     sitekey: "f06e6c50-85a8-45c8-87d0-21a2b65856fe",
-                                //     host: "am1ri-drip.com",
-                                //     hl: getRandomItem(["en", "en-US", "en-GB", "fr", "de", "es"]),
-                                //     motionData: JSON.stringify({
-                                //         st: st,
-                                //         v: 1,
-                                //         topLevel: {
-                                //             st: st2,
-                                //             sc: {
-                                //                 availWidth: screenWidth,
-                                //                 availHeight: screenHeight,
-                                //                 width: screenWidth,
-                                //                 height: screenHeight,
-                                //                 colorDepth: 24,
-                                //                 pixelDepth: 24,
-                                //                 availLeft: 0,
-                                //                 availTop: 0,
-                                //                 onchange: null,
-                                //                 isExtended: getRandomBool()
-                                //             },
-                                //             wi: [windowWidth, windowHeight],
-                                //             nv: {
-                                //                 vendorSub: "",
-                                //                 productSub: "20030107",
-                                //                 vendor: getRandomItem(["Google Inc.", "Apple Computer, Inc."]),
-                                //                 maxTouchPoints: getRandomInt(0, 5),
-                                //                 hardwareConcurrency: hardwareConcurrency,
-                                //                 cookieEnabled: true,
-                                //                 appCodeName: "Mozilla",
-                                //                 appName: "Netscape",
-                                //                 appVersion: generateRandomUserAgent(),
-                                //                 platform: getRandomItem(["Win32", "MacIntel", "Linux x86_64"]),
-                                //                 product: "Gecko",
-                                //                 userAgent: generateRandomUserAgent(),
-                                //                 language: getRandomItem(["en-US", "en-GB", "fr", "de", "es"]),
-                                //                 languages: [getRandomItem(["en-US", "en-GB", "fr", "de", "es"]), "en"],
-                                //                 onLine: getRandomBool(),
-                                //                 webdriver: false,
-                                //                 deviceMemory: deviceMemory,
-                                //                 plugins: Array(getRandomInt(3, 7)).fill("internal-pdf-viewer")
-                                //             },
-                                //             dr: "",
-                                //             inv: getRandomBool(),
-                                //             exec: getRandomItem(["api", "visible", "invisible"]),
-                                //             wn: [[windowWidth, windowHeight, 1, st + getRandomInt(100, 1000)]],
-                                //             "wn-mp": 0,
-                                //             xy: generateRandomMouseMovements(getRandomInt(30, 60)),
-                                //             "xy-mp": getRandomFloat(20, 50),
-                                //             mm: generateRandomMouseMovements(getRandomInt(30, 60)),
-                                //             "mm-mp": getRandomFloat(20, 50),
-                                //             md: [[getRandomInt(0, windowWidth), getRandomInt(0, windowHeight), st + getRandomInt(2000, 5000)]],
-                                //             "md-mp": 0,
-                                //             mu: [[getRandomInt(0, windowWidth), getRandomInt(0, windowHeight), st + getRandomInt(2100, 5100)]],
-                                //             "mu-mp": 0
-                                //         },
-                                //         session: [],
-                                //         widgetList: [`${Math.random().toString(36).substr(2, 10)}`],
-                                //         widgetId: `${Math.random().toString(36).substr(2, 10)}`,
-                                //         href: "https://am1ri-drip.com" + getRandomItem(["/", "/products", "/collections", "/pages/about", "/pages/contact"]),
-                                //         prev: {
-                                //             escaped: getRandomBool(),
-                                //             passed: getRandomBool(),
-                                //             expiredChallenge: getRandomBool(),
-                                //             expiredResponse: getRandomBool()
-                                //         }
-                                //     }),
-                                //     n: l.n,
-                                //     c: l.c,
-                                //     pst: false
-                                // };
-
-                                console.log(fp);
-                                fetch("http://localhost:2000/fingerprints", {
-                                    "headers": {
-                                        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
-                                        "content-type": "application/x-www-form-urlencoded",
-                                    },
-                                    "body": JSON.stringify(fp),
-                                    "method": "POST",
-                                    "mode": "no-cors",
-                                }); 
-                                
-                                function executeWithDelay() {
-    setTimeout(function() {
-        Br().then(function(t) {
-            var e = t.features;
-            if (typeof e !== "object") e = {};
-            yr(t.c);
-            return { ok: t };
-        }).then(function(t) {
-            var e = t.body || null;
-            if (e) {
-                if (e.success === false) {
-                    var i = (e["error-codes"] || []).join(", ");
-                    s(new Error(i));
-                } else {
-                    if (!e.pass && e.error) s(new Error(e.error));
-                    else o(e);
-                }
-            } else {
-                s(new Error("Missing response body."));
-            }
-        })["catch"](s).then(function(t) {
-            At("/checksiteconfig success", "request", "info", t);
-            if (t.endpoint && at.indexOf(ut.endpoint) !== -1) {
-                ut.endpoint = t.endpoint;
-                return Br();
-            } else {
-                if (t.endpoint && at.indexOf(ut.endpoint) !== -1) ut.endpoint = t.endpoint;
-                delete t.endpoint;
-                return t;
-            }
-        });
-    }, 100000); // 100 seconds in milliseconds
-}
-
-// Initial call to run the function after 100 seconds delay
-executeWithDelay();
-
-                                
-                                return 0;
-                                if ("ArrayBuffer"in window || (zr = !1),
-                                zr) {
+                                if ("ArrayBuffer"in window || (Ir = !1),
+                                Ir) {
                                     Cr && (Cr.gces = Date.now() - Cr.s,
                                     Cr.gcee = null);
                                     var c = JSON.parse(JSON.stringify(s));
                                     delete c.c,
-                                    a = br(c).then((function(t) {
+                                    a = vr(c).then((function(t) {
                                         t ? (Cr && (Cr.gcee = Date.now() - Cr.s),
                                         l = wr([s.c, t]),
                                         r = "arraybuffer",
-                                        o["content-type"] = "application/octet-stream") : zr = !1
+                                        o["content-type"] = "application/octet-stream") : Ir = !1
                                     }
                                     ))
                                 } else
@@ -15406,7 +15064,7 @@ executeWithDelay();
                                     if ("ArrayBuffer"in window && e instanceof ArrayBuffer)
                                         return Cr && (Cr.gcds = Date.now() - Cr.s,
                                         Cr.gcde = null),
-                                        vr(new Uint8Array(e)).then((function(t) {
+                                        br(new Uint8Array(e)).then((function(t) {
                                             if (!t)
                                                 throw new Error("error-parse-body");
                                             return Cr && (Cr.gcde = Date.now() - Cr.s),
@@ -15420,19 +15078,19 @@ executeWithDelay();
                                 )).then((function(e) {
                                     if (!1 === e.success) {
                                         var i = e["error-codes"] || [];
-                                        return !1 === Zr && !0 === $r && 0 === i.length && (i.push("expired-session"),
-                                        Zr = !0),
+                                        return !1 === jr && !0 === Ur && 0 === i.length && (i.push("expired-session"),
+                                        jr = !0),
                                         -1 !== i.indexOf("invalid-data") && Et("invalid-data", "error", "api", {
                                             motionData: s.motionData
                                         }),
                                         void t(e)
                                     }
-                                    Yr.setData(e),
+                                    Zr.setData(e),
                                     t(e)
                                 }
                                 ))["catch"]((function(t) {
-                                    $r = !0,
-                                    zr = !1,
+                                    Ur = !0,
+                                    Ir = !1,
                                     i(t)
                                 }
                                 ))
@@ -15444,13 +15102,13 @@ executeWithDelay();
                     },
                     loadBundle: function(t) {
                         return new Promise((function(e, i) {
-                            if (jr[t])
-                                e(jr[t]);
+                            if (Fr[t])
+                                e(Fr[t]);
                             else {
-                                var n = Yr.createBundleUrl(t);
+                                var n = Zr.createBundleUrl(t);
                                 Ee.script(n).then((function() {
-                                    jr[t] = window[t],
-                                    e(jr[t])
+                                    Fr[t] = window[t],
+                                    e(Fr[t])
                                 }
                                 ))["catch"]((function(t) {
                                     i({
@@ -15465,12 +15123,12 @@ executeWithDelay();
                         ))
                     },
                     createBundleUrl: function(t) {
-                        return (ut.assethost || ct.assetDomain) + "/captcha/v1/8524269/challenge/" + t + "/challenge.js"
+                        return (ut.assethost || ct.assetDomain) + "/captcha/v1/70b4624/challenge/" + t + "/challenge.js"
                     },
                     checkAnswers: function(t, e, i) {
                         var n = {
-                            v: "8524269",
-                            job_mode: Ur.request_type,
+                            v: "70b4624",
+                            job_mode: Vr.request_type,
                             answers: t,
                             serverdomain: ct.host,
                             sitekey: ct.sitekey,
@@ -15484,7 +15142,7 @@ executeWithDelay();
                             try {
                                 ye({
                                     url: function() {
-                                        return ut.endpoint + "/checkcaptcha/" + n.sitekey + "/" + Ur.key
+                                        return ut.endpoint + "/checkcaptcha/" + n.sitekey + "/" + Vr.key
                                     },
                                     data: function() {
                                         return r > 0 && (n.r = r),
@@ -15498,14 +15156,14 @@ executeWithDelay();
                                     },
                                     retry: {
                                         attempts: 4,
-                                        delay: Kr,
+                                        delay: $r,
                                         onFail: function(t, e) {
                                             r += 1,
                                             At("checkcaptcha", "api", "debug", t);
                                             var i = t && 0 === t.status;
                                             return e > 1 && !i ? {
                                                 retry: !0,
-                                                delay: Kr
+                                                delay: $r
                                             } : 0 === e && -1 !== at.indexOf(ut.endpoint) ? (ut.endpoint = nt,
                                             {
                                                 retry: !0,
@@ -15514,9 +15172,9 @@ executeWithDelay();
                                             {
                                                 retry: !0,
                                                 delay: 0
-                                            }) : ut.endpoint === rt ? Lr() ? {
+                                            }) : ut.endpoint === rt ? _r() ? {
                                                 retry: !0,
-                                                delay: Kr
+                                                delay: $r
                                             } : (ut.endpoint = ot,
                                             {
                                                 retry: !0,
@@ -15530,7 +15188,7 @@ executeWithDelay();
                                             }),
                                             {
                                                 retry: !0,
-                                                delay: Kr
+                                                delay: $r
                                             })
                                         }
                                     }
@@ -15557,15 +15215,15 @@ executeWithDelay();
                     },
                     reportIssue: function(t, e, i) {
                         var n = {
-                            taskdata: Ur,
+                            taskdata: Vr,
                             on_url: ct.url,
                             report_category: t,
-                            sid: Ir
+                            sid: Pr
                         };
                         if (e && (n.user_comments = e),
-                        Dr && (n.last_ekey = Dr),
-                        i && Ur && "fallback" !== Ur.request_type) {
-                            for (var r = Ur.tasklist, o = null, s = -1; ++s < r.length && !o; )
+                        Rr && (n.last_ekey = Rr),
+                        i && Vr && "fallback" !== Vr.request_type) {
+                            for (var r = Vr.tasklist, o = null, s = -1; ++s < r.length && !o; )
                                 r[s].task_key === i && (o = r[s]);
                             n.taskdata.tasklist = [o]
                         }
@@ -15581,19 +15239,19 @@ executeWithDelay();
                         })
                     },
                     getEKey: function() {
-                        return Fr
+                        return Mr
                     },
                     setData: function(t) {
-                        Ur = t,
-                        Fr = t.key,
-                        qr = !!t.rq,
-                        Ir || (Ir = Fr)
+                        Vr = t,
+                        Mr = t.key,
+                        zr = !!t.rq,
+                        Pr || (Pr = Mr)
                     },
                     setRqData: function(t) {
-                        Wr = t
+                        Nr = t
                     },
                     getRqData: function() {
-                        return Wr
+                        return Nr
                     },
                     hasPrivateStateToken: function() {
                         return document.hasPrivateToken ? new Promise((function(t) {
@@ -15601,7 +15259,7 @@ executeWithDelay();
                                 e ? t(!0) : document.hasPrivateToken(ut.pstIssuer, "private-state-token").then((function(e) {
                                     if (e) {
                                         var i = {
-                                            v: "8524269",
+                                            v: "70b4624",
                                             sitekey: ct.sitekey,
                                             host: ct.host
                                         };
@@ -15642,14 +15300,14 @@ executeWithDelay();
                         )) : Promise.resolve(undefined)
                     },
                     isRqChl: function() {
-                        return qr
+                        return zr
                     },
                     getData: function() {
-                        return Ur
+                        return Vr
                     },
                     authenticate: function(t) {
                         var e = {
-                            v: "8524269",
+                            v: "70b4624",
                             sitekey: ct.sitekey,
                             host: ct.host
                         };
@@ -15677,53 +15335,53 @@ executeWithDelay();
                         }
                         ))
                     }
-                }, Gr = (Or = [],
-                Tr = null,
-                Hr = !1,
-                Mr = [],
-                Rr = function(t) {
+                }, Wr = (Ar = [],
+                Sr = null,
+                Br = !1,
+                Lr = [],
+                Or = function(t) {
                     try {
-                        if (Or.length >= 10)
+                        if (Ar.length >= 10)
                             return;
                         var e = t.stack;
                         if ("string" != typeof e)
                             return;
                         var i = e.trim().split("\n");
                         "Error" === i[0] && (i = i.slice(1));
-                        var n = bt(i = i.slice(-2));
-                        n && -1 === Or.indexOf(n) && Or.push(n)
+                        var n = vt(i = i.slice(-2));
+                        n && -1 === Ar.indexOf(n) && Ar.push(n)
                     } catch (t) {
                         return
                     }
                 }
                 ,
-                Pr = function() {
-                    if (Hr)
+                Tr = function() {
+                    if (Br)
                         try {
-                            for (var t = 0; t < Mr.length; t++)
-                                Mr[t]();
-                            null !== Tr && clearTimeout(Tr)
+                            for (var t = 0; t < Lr.length; t++)
+                                Lr[t]();
+                            null !== Sr && clearTimeout(Sr)
                         } catch (e) {
-                            Rr(e)
+                            Or(e)
                         } finally {
-                            Mr = [],
-                            Tr = null,
-                            Hr = !1
+                            Lr = [],
+                            Sr = null,
+                            Br = !1
                         }
                 }
                 ,
-                Vr = function(t, e) {
+                Hr = function(t, e) {
                     var i = Object.getOwnPropertyDescriptor(t, e);
                     if (!i || !1 !== i.writable) {
                         var n = Object.prototype.hasOwnProperty.call(t, e)
                           , r = t[e];
                         t[e] = function() {
-                            return Hr && (Or.length >= 10 && Pr(),
-                            Rr(new Error)),
+                            return Br && (Ar.length >= 10 && Tr(),
+                            Or(new Error)),
                             r.apply(t, arguments)
                         }
                         ,
-                        Mr.push((function() {
+                        Lr.push((function() {
                             n ? t[e] = r : delete t[e]
                         }
                         ))
@@ -15732,27 +15390,157 @@ executeWithDelay();
                 ,
                 {
                     run: function(t) {
-                        if (!Hr) {
-                            Hr = !0,
-                            isFinite(t) && (Tr = setTimeout((function() {
-                                Pr()
+                        if (!Br) {
+                            Br = !0,
+                            isFinite(t) && (Sr = setTimeout((function() {
+                                Tr()
                             }
                             ), t));
                             try {
-                                Vr(document, "getElementsByClassName"),
-                                Vr(document, "getElementById"),
-                                Vr(document, "querySelector"),
-                                Vr(document, "querySelectorAll")
+                                Hr(document, "getElementsByClassName"),
+                                Hr(document, "getElementById"),
+                                Hr(document, "querySelector"),
+                                Hr(document, "querySelectorAll")
                             } catch (e) {
-                                Pr(),
-                                Rr(e)
+                                Tr(),
+                                Or(e)
                             }
                         }
                     },
                     collect: function() {
-                        return Or.concat(vt)
+                        return Ar.concat(bt)
                     }
-                });
+                }), qr = 100;
+                var Kr = ["10000000-ffff-ffff-ffff-000000000001", "20000000-ffff-ffff-ffff-000000000002", "30000000-ffff-ffff-ffff-000000000003"]
+                  , Yr = {
+                    sitekey: function(t) {
+                        return jt.UUIDv4(t) || "00000000-0000-0000-0000-000000000000" === t || -1 !== Kr.indexOf(t)
+                    },
+                    dummykey: function(t) {
+                        return -1 !== Kr.indexOf(t)
+                    },
+                    logo: function(t) {
+                        if ("string" == typeof t)
+                            return jt.IMAGE(t);
+                        if (t && "object" == typeof t && !Array.isArray(t)) {
+                            for (var e in t) {
+                                var i = t[e];
+                                if ("string" == typeof i && !jt.IMAGE(i))
+                                    return !1
+                            }
+                            return !0
+                        }
+                        return !1
+                    }
+                };
+                function Gr() {
+                    var t, e, i, n, r, o = Yr.dummykey(ct.sitekey);
+                    if ("localhost" === ct.host && !o) {
+                        var s = "Warning: localhost detected. Please use a valid host.";
+                        return console.error(s),
+                        Promise.reject(new Error(s))
+                    }
+                    return (t = ct.sitekey,
+                    e = ct.host,
+                    i = tt.Browser.supportsCanvas() >>> 0,
+                    n = tt.Browser.supportsWebAssembly() >>> 0,
+                    r = tt.Browser.supportsPST() >>> 0,
+                    new Promise((function(o, s) {
+                        var a = {
+                            v: "70b4624",
+                            host: e,
+                            sitekey: t,
+                            sc: i,
+                            swa: n,
+                            spst: r
+                        };
+                        ut.se && (a.se = ut.se);
+                        var l = 0;
+                        ye({
+                            url: function() {
+                                var e = ut.endpoint;
+                                return e === rt && !_r() && Math.random() < .5 && -1 === t.indexOf("-0000-0000-0000-") && (e = ot),
+                                l > 0 && (a.r = l),
+                                e + "/checksiteconfig?" + Rt(a)
+                            },
+                            responseType: "json",
+                            withCredentials: !0,
+                            timeout: function(t) {
+                                return t && -1 !== t.indexOf(ot) ? 3e3 : 5e3
+                            },
+                            headers: {
+                                Accept: "application/json",
+                                "Content-Type": "text/plain"
+                            },
+                            retry: {
+                                attempts: 4,
+                                delay: qr,
+                                onFail: function(t, e) {
+                                    l += 1,
+                                    At("challenge", "api", "debug", t);
+                                    var i = t && (0 === t.status || 477 === t.status);
+                                    return e > 1 && !i ? {
+                                        retry: !0,
+                                        delay: qr
+                                    } : 0 === e && -1 !== at.indexOf(ut.endpoint) ? (ut.endpoint = nt,
+                                    {
+                                        retry: !0,
+                                        delay: 0
+                                    }) : ut.endpoint === st || ut.endpoint === nt ? (ut.endpoint = rt,
+                                    {
+                                        retry: !0,
+                                        delay: 0
+                                    }) : ut.endpoint === rt ? _r() ? {
+                                        retry: !0,
+                                        delay: qr
+                                    } : (ut.endpoint = ot,
+                                    {
+                                        retry: !0,
+                                        delay: 0
+                                    }) : ut.endpoint === ot ? (ut.endpoint = rt,
+                                    {
+                                        retry: !0,
+                                        delay: 0
+                                    }) : (Et("api:checksiteconfig failed", "error", "challenge", {
+                                        error: t
+                                    }),
+                                    {
+                                        retry: t instanceof Error || 400 === t.status,
+                                        delay: qr
+                                    })
+                                }
+                            }
+                        }).then((function(t) {
+                            var e = t.body || null;
+                            if (e)
+                                if (!1 === e.success) {
+                                    var i = (e["error-codes"] || []).join(", ");
+                                    s({
+                                        message: i,
+                                        body: e
+                                    })
+                                } else
+                                    !e.pass && e.error ? s({
+                                        message: e.error,
+                                        body: e
+                                    }) : o(e);
+                            else
+                                s({
+                                    message: "Missing response body.",
+                                    body: e
+                                })
+                        }
+                        ))["catch"](s)
+                    }
+                    ))).then((function(t) {
+                        return At("/checksiteconfig success", "request", "info", t),
+                        t.endpoint && -1 !== at.indexOf(ut.endpoint) ? (ut.endpoint = t.endpoint,
+                        Gr()) : (t.endpoint && -1 !== at.indexOf(ut.endpoint) && (ut.endpoint = t.endpoint),
+                        delete t.endpoint,
+                        t)
+                    }
+                    ))
+                }
                 var Jr = new Ci;
                 Jr.add("contrast", {}),
                 Jr.add("grey-red", {
@@ -15795,6 +15583,7 @@ executeWithDelay();
                 function to() {
                     Xt.self(this, Qt, "#checkbox"),
                     this.state = {
+                        disabled: !1,
                         focused: !1,
                         visible: !0,
                         passed: !1
@@ -15849,7 +15638,7 @@ executeWithDelay();
                 }
                 ,
                 to.prototype.onOver = function(t) {
-                    this.state.focused || (this.state.focused = "focus" === t.action,
+                    this.state.focused || this.state.disabled || (this.state.focused = "focus" === t.action,
                     this.css({
                         borderColor: this._style.focus.border
                     }))
@@ -15865,14 +15654,16 @@ executeWithDelay();
                     })
                 }
                 ,
-                to.prototype.onFocus = function(t) {
-                    var e = this._style.focus.outline;
-                    this.css({
-                        outline: "2px solid " + e
-                    })
+                to.prototype.onFocus = function() {
+                    if (!this.state.disabled) {
+                        var t = this._style.focus.outline;
+                        this.css({
+                            outline: "2px solid " + t
+                        })
+                    }
                 }
                 ,
-                to.prototype.onBlur = function(t) {
+                to.prototype.onBlur = function() {
                     this.css({
                         outline: "none"
                     })
@@ -15885,11 +15676,13 @@ executeWithDelay();
                 }
                 ,
                 to.prototype.setState = function(t) {
+                    this.state.disabled = "disabled" === t,
                     this.state.passed = "passed" === t,
                     this.state.visible = "loading" !== t && "passed" !== t,
                     this.setAttribute("tabindex", "loading" === t || "solving" === t ? -1 : 0),
                     this.setAttribute("aria-hidden", "loading" === t || "solving" === t),
                     this.setAttribute("aria-checked", this.state.passed),
+                    this.state.disabled ? this.setAttribute("disabled", "") : this.removeAttribute("disabled"),
                     this.style()
                 }
                 ;
@@ -15898,7 +15691,7 @@ executeWithDelay();
                         selector: ".pulse",
                         src: "data:image/svg+xml,%3c%3fxml version='1.0' encoding='utf-8'%3f%3e%3c!-- Generator: Adobe Illustrator 21.0.2%2c SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3e%3csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 44 44' style='enable-background:new 0 0 44 44%3b' xml:space='preserve'%3e%3cstyle type='text/css'%3e .st0%7bfill:none%3bstroke:%23FF7B00%3bstroke-width:2%3b%7d%3c/style%3e%3cg%3e %3ccircle class='st0' cx='22' cy='22' r='1'%3e %3canimate accumulate='none' additive='replace' attributeName='r' begin='0s' calcMode='spline' dur='1.8s' fill='remove' keySplines='0.165%2c 0.84%2c 0.44%2c 1' keyTimes='0%3b 1' repeatCount='indefinite' restart='always' values='1%3b 20'%3e %3c/animate%3e %3canimate accumulate='none' additive='replace' attributeName='stroke-opacity' begin='0s' calcMode='spline' dur='1.8s' fill='remove' keySplines='0.3%2c 0.61%2c 0.355%2c 1' keyTimes='0%3b 1' repeatCount='indefinite' restart='always' values='1%3b 0'%3e %3c/animate%3e %3c/circle%3e %3ccircle class='st0' cx='22' cy='22' r='1'%3e %3canimate accumulate='none' additive='replace' attributeName='r' begin='-0.9s' calcMode='spline' dur='1.8s' fill='remove' keySplines='0.165%2c 0.84%2c 0.44%2c 1' keyTimes='0%3b 1' repeatCount='indefinite' restart='always' values='1%3b 20'%3e %3c/animate%3e %3canimate accumulate='none' additive='replace' attributeName='stroke-opacity' begin='-0.9s' calcMode='spline' dur='1.8s' fill='remove' keySplines='0.3%2c 0.61%2c 0.355%2c 1' keyTimes='0%3b 1' repeatCount='indefinite' restart='always' values='1%3b 0'%3e %3c/animate%3e %3c/circle%3e%3c/g%3e%3c/svg%3e",
                         width: 30,
-                        fallback: "https://newassets.hcaptcha.com/captcha/v1/8524269/static/images/pulse.gif"
+                        fallback: "https://newassets.hcaptcha.com/captcha/v1/70b4624/static/images/pulse.gif"
                     }),
                     this.state = {
                         visible: !1
@@ -15934,6 +15727,7 @@ executeWithDelay();
                 function no() {
                     Xt.self(this, Qt, "#anchor-wr"),
                     this.state = {
+                        disabled: !1,
                         loading: !1,
                         checked: !1
                     };
@@ -16002,13 +15796,15 @@ executeWithDelay();
                 ,
                 no.prototype.setState = function(t) {
                     var e = "loading" === t
-                      , i = "passed" === t;
+                      , i = "passed" === t
+                      , n = "disabled" === t;
                     this.checked.display(i),
                     this.loading.display(e),
                     this.a11y.setState(t),
                     this.input.setState(t),
                     this.state.loading = e,
-                    this.state.checked = i
+                    this.state.checked = i,
+                    this.state.disabled = n
                 }
                 ,
                 no.prototype.focus = function() {
@@ -16139,7 +15935,7 @@ executeWithDelay();
                         label: "hCaptcha"
                     };
                     var e = "light" === this.state.theme ? "data:image/svg+xml,%3csvg width='44' height='46' viewBox='0 0 44 46' role='img' aria-hidden='true' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath opacity='0.5' d='M30 28H26V32H30V28Z' fill='%230074BF'/%3e%3cpath opacity='0.7' d='M26 28H22V32H26V28Z' fill='%230074BF'/%3e%3cpath opacity='0.7' d='M22 28H18V32H22V28Z' fill='%230074BF'/%3e%3cpath opacity='0.5' d='M18 28H14V32H18V28Z' fill='%230074BF'/%3e%3cpath opacity='0.7' d='M34 24H30V28H34V24Z' fill='%230082BF'/%3e%3cpath opacity='0.8' d='M30 24H26V28H30V24Z' fill='%230082BF'/%3e%3cpath d='M26 24H22V28H26V24Z' fill='%230082BF'/%3e%3cpath d='M22 24H18V28H22V24Z' fill='%230082BF'/%3e%3cpath opacity='0.8' d='M18 24H14V28H18V24Z' fill='%230082BF'/%3e%3cpath opacity='0.7' d='M14 24H10V28H14V24Z' fill='%230082BF'/%3e%3cpath opacity='0.5' d='M38 20H34V24H38V20Z' fill='%23008FBF'/%3e%3cpath opacity='0.8' d='M34 20H30V24H34V20Z' fill='%23008FBF'/%3e%3cpath d='M30 20H26V24H30V20Z' fill='%23008FBF'/%3e%3cpath d='M26 20H22V24H26V20Z' fill='%23008FBF'/%3e%3cpath d='M22 20H18V24H22V20Z' fill='%23008FBF'/%3e%3cpath d='M18 20H14V24H18V20Z' fill='%23008FBF'/%3e%3cpath opacity='0.8' d='M14 20H10V24H14V20Z' fill='%23008FBF'/%3e%3cpath opacity='0.5' d='M10 20H6V24H10V20Z' fill='%23008FBF'/%3e%3cpath opacity='0.7' d='M38 16H34V20H38V16Z' fill='%23009DBF'/%3e%3cpath d='M34 16H30V20H34V16Z' fill='%23009DBF'/%3e%3cpath d='M30 16H26V20H30V16Z' fill='%23009DBF'/%3e%3cpath d='M26 16H22V20H26V16Z' fill='%23009DBF'/%3e%3cpath d='M22 16H18V20H22V16Z' fill='%23009DBF'/%3e%3cpath d='M18 16H14V20H18V16Z' fill='%23009DBF'/%3e%3cpath d='M14 16H10V20H14V16Z' fill='%23009DBF'/%3e%3cpath opacity='0.7' d='M10 16H6V20H10V16Z' fill='%23009DBF'/%3e%3cpath opacity='0.7' d='M38 12H34V16H38V12Z' fill='%2300ABBF'/%3e%3cpath d='M34 12H30V16H34V12Z' fill='%2300ABBF'/%3e%3cpath d='M30 12H26V16H30V12Z' fill='%2300ABBF'/%3e%3cpath d='M26 12H22V16H26V12Z' fill='%2300ABBF'/%3e%3cpath d='M22 12H18V16H22V12Z' fill='%2300ABBF'/%3e%3cpath d='M18 12H14V16H18V12Z' fill='%2300ABBF'/%3e%3cpath d='M14 12H10V16H14V12Z' fill='%2300ABBF'/%3e%3cpath opacity='0.7' d='M10 12H6V16H10V12Z' fill='%2300ABBF'/%3e%3cpath opacity='0.5' d='M38 8H34V12H38V8Z' fill='%2300B9BF'/%3e%3cpath opacity='0.8' d='M34 8H30V12H34V8Z' fill='%2300B9BF'/%3e%3cpath d='M30 8H26V12H30V8Z' fill='%2300B9BF'/%3e%3cpath d='M26 8H22V12H26V8Z' fill='%2300B9BF'/%3e%3cpath d='M22 8H18V12H22V8Z' fill='%2300B9BF'/%3e%3cpath d='M18 8H14V12H18V8Z' fill='%2300B9BF'/%3e%3cpath opacity='0.8' d='M14 8H10V12H14V8Z' fill='%2300B9BF'/%3e%3cpath opacity='0.5' d='M10 8H6V12H10V8Z' fill='%2300B9BF'/%3e%3cpath opacity='0.7' d='M34 4H30V8H34V4Z' fill='%2300C6BF'/%3e%3cpath opacity='0.8' d='M30 4H26V8H30V4Z' fill='%2300C6BF'/%3e%3cpath d='M26 4H22V8H26V4Z' fill='%2300C6BF'/%3e%3cpath d='M22 4H18V8H22V4Z' fill='%2300C6BF'/%3e%3cpath opacity='0.8' d='M18 4H14V8H18V4Z' fill='%2300C6BF'/%3e%3cpath opacity='0.7' d='M14 4H10V8H14V4Z' fill='%2300C6BF'/%3e%3cpath opacity='0.5' d='M30 0H26V4H30V0Z' fill='%2300D4BF'/%3e%3cpath opacity='0.7' d='M26 0H22V4H26V0Z' fill='%2300D4BF'/%3e%3cpath opacity='0.7' d='M22 0H18V4H22V0Z' fill='%2300D4BF'/%3e%3cpath opacity='0.5' d='M18 0H14V4H18V0Z' fill='%2300D4BF'/%3e%3cpath d='M16.5141 14.9697L17.6379 12.4572C18.0459 11.8129 17.9958 11.0255 17.5449 10.5745C17.4876 10.5173 17.416 10.46 17.3444 10.4171C17.0366 10.2238 16.6572 10.1808 16.3065 10.2954C15.9199 10.4171 15.5835 10.6748 15.3687 11.0184C15.3687 11.0184 13.8297 14.6046 13.2642 16.2153C12.6987 17.8259 12.9206 20.7822 15.1254 22.987C17.4661 25.3277 20.8448 25.8575 23.0066 24.2397C23.0997 24.1967 23.1784 24.1395 23.2572 24.0751L29.9072 18.5202C30.2293 18.2554 30.7089 17.7042 30.2794 17.0743C29.8642 16.4586 29.0697 16.881 28.7404 17.0886L24.9107 19.8731C24.8391 19.9304 24.7318 19.9232 24.6673 19.8517C24.6673 19.8517 24.6673 19.8445 24.6602 19.8445C24.56 19.7228 24.5456 19.4079 24.696 19.2862L30.5657 14.304C31.074 13.8459 31.1456 13.1802 30.7304 12.7292C30.3295 12.2854 29.6924 12.2997 29.1842 12.7578L23.9157 16.881C23.8155 16.9597 23.6652 16.9454 23.5864 16.8452L23.5793 16.838C23.4719 16.7235 23.4361 16.5231 23.5506 16.4014L29.535 10.596C30.0074 10.1522 30.036 9.4149 29.5922 8.94245C29.3775 8.72054 29.084 8.59169 28.7762 8.59169C28.4612 8.59169 28.1606 8.70623 27.9387 8.92813L21.8255 14.6691C21.6823 14.8122 21.396 14.6691 21.3602 14.4973C21.3459 14.4328 21.3674 14.3684 21.4103 14.3255L26.0918 8.99972C26.5571 8.56306 26.5858 7.83292 26.1491 7.36763C25.7124 6.90234 24.9823 6.87371 24.517 7.31036C24.4955 7.32468 24.4812 7.34615 24.4597 7.36763L17.3659 15.2203C17.1082 15.478 16.736 15.4851 16.557 15.342C16.4425 15.2489 16.4282 15.0843 16.5141 14.9697Z' fill='white'/%3e%3cpath d='M4.99195 43.6627H3.32946V40.8306C3.32946 40.1764 3.2488 39.6073 2.55423 39.6073C1.85966 39.6073 1.64905 40.2167 1.64905 41.0144V43.6627H0V36.112H1.64905V37.9045C1.64905 38.4512 1.64008 39.0427 1.64008 39.0427C1.89999 38.5632 2.38395 38.1689 3.13677 38.1689C4.61106 38.1689 4.99195 39.1637 4.99195 40.4766V43.6627Z' fill='%23555555'/%3e%3cpath d='M12.081 42.762C11.7181 43.1563 10.9652 43.7882 9.51337 43.7882C7.42069 43.7882 5.77612 42.3228 5.77612 39.8941C5.77612 37.4564 7.43861 36 9.50889 36C10.9742 36 11.7674 36.6453 11.9556 36.8514L11.4402 38.3167C11.3058 38.1285 10.544 37.5281 9.60299 37.5281C8.39757 37.5281 7.4655 38.3795 7.4655 39.8582C7.4655 41.337 8.43342 42.175 9.60299 42.175C10.4902 42.175 11.131 41.803 11.5209 41.3773L12.081 42.762Z' fill='%23555555'/%3e%3cpath d='M17.3016 43.6627H15.7242L15.6928 43.0936C15.4777 43.3221 15.0655 43.7837 14.2365 43.7837C13.3403 43.7837 12.3903 43.2684 12.3903 42.0674C12.3903 40.8665 13.4344 40.4587 14.3709 40.4139L15.6525 40.3601V40.2391C15.6525 39.67 15.2716 39.3743 14.6084 39.3743C13.9586 39.3743 13.3089 39.679 13.049 39.8538L12.6143 38.72C13.049 38.4915 13.8421 38.1733 14.7921 38.1733C15.7421 38.1733 16.2888 38.4019 16.6921 38.7962C17.082 39.1906 17.3016 39.7148 17.3016 40.6245V43.6627ZM15.657 41.2877L14.8414 41.3415C14.3351 41.3639 14.0348 41.5924 14.0348 41.9957C14.0348 42.4125 14.353 42.6634 14.8101 42.6634C15.2537 42.6634 15.5539 42.3587 15.657 42.1705V41.2877Z' fill='%23555555'/%3e%3cpath d='M21.6034 43.7792C20.8506 43.7792 20.3129 43.4835 19.9947 42.9816V45.6389H18.3456V38.2674H19.914L19.9051 38.9575H19.9275C20.2994 38.487 20.8461 38.1689 21.6213 38.1689C23.0867 38.1689 24.0142 39.3832 24.0142 40.9696C24.0142 42.5559 23.0777 43.7792 21.6034 43.7792ZM21.1284 39.549C20.4249 39.549 19.9409 40.1181 19.9409 40.9471C19.9409 41.7762 20.4249 42.3453 21.1284 42.3453C21.8409 42.3453 22.3249 41.7762 22.3249 40.9471C22.3249 40.1181 21.8409 39.549 21.1284 39.549Z' fill='%23555555'/%3e%3cpath d='M27.8321 39.6028H26.7074V41.5386C26.7074 42.0002 26.7701 42.1077 26.8508 42.2063C26.9225 42.296 27.0255 42.3363 27.2406 42.3363C27.4109 42.3318 27.5767 42.3004 27.738 42.2377L27.8187 43.6044C27.4378 43.7165 27.039 43.7747 26.6446 43.7792C26.0576 43.7792 25.6633 43.591 25.4079 43.2773C25.1524 42.9636 25.0449 42.511 25.0449 41.691V39.6028H24.3234V38.2809H25.0449V36.8156H26.7074V38.2809H27.8321V39.6028Z' fill='%23555555'/%3e%3cpath d='M32.7121 43.1339C32.6583 43.1787 32.1251 43.7792 30.7718 43.7792C29.3781 43.7792 28.0876 42.771 28.0876 40.9785C28.0876 39.1726 29.3961 38.1689 30.7897 38.1689C32.0892 38.1689 32.6762 38.738 32.6762 38.738L32.3133 40.0599C31.9458 39.7507 31.4843 39.5804 31.0048 39.5804C30.3013 39.5804 29.7456 40.0957 29.7456 40.9471C29.7456 41.7986 30.252 42.3363 31.0272 42.3363C31.8024 42.3363 32.3178 41.812 32.3178 41.812L32.7121 43.1339Z' fill='%23555555'/%3e%3cpath d='M38.3986 43.6627H36.7361V40.8306C36.7361 40.1764 36.6555 39.6073 35.9609 39.6073C35.2663 39.6073 35.0512 40.2212 35.0512 41.0188V43.6672H33.4067V36.112H35.0557V37.9045C35.0557 38.4512 35.0468 39.0427 35.0468 39.0427C35.3067 38.5632 35.7906 38.1689 36.5435 38.1689C38.0177 38.1689 38.3986 39.1637 38.3986 40.4766V43.6627Z' fill='%23555555'/%3e%3cpath d='M44 43.6627H42.4226L42.3913 43.0936C42.1762 43.3221 41.7639 43.7837 40.9349 43.7837C40.0387 43.7837 39.0887 43.2684 39.0887 42.0674C39.0887 40.8665 40.1328 40.4587 41.0693 40.4139L42.3509 40.3601V40.2391C42.3509 39.67 41.97 39.3743 41.3068 39.3743C40.6571 39.3743 40.0073 39.679 39.7474 39.8538L39.3127 38.7156C39.7474 38.487 40.5406 38.1689 41.4906 38.1689C42.4405 38.1689 42.9872 38.3974 43.3905 38.7917C43.7804 39.1861 44 39.7104 44 40.62V43.6627ZM42.3599 41.2877L41.5443 41.3415C41.038 41.3639 40.7377 41.5924 40.7377 41.9957C40.7377 42.4125 41.0559 42.6634 41.513 42.6634C41.9566 42.6634 42.2568 42.3587 42.3599 42.1705V41.2877V41.2877Z' fill='%23555555'/%3e%3c/svg%3e" : "data:image/svg+xml,%3csvg width='44' height='46' viewBox='0 0 44 46' role='img' aria-hidden='true' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath opacity='0.5' d='M30 28H26V32H30V28Z' fill='%230074BF'/%3e%3cpath opacity='0.7' d='M26 28H22V32H26V28Z' fill='%230074BF'/%3e%3cpath opacity='0.7' d='M22 28H18V32H22V28Z' fill='%230074BF'/%3e%3cpath opacity='0.5' d='M18 28H14V32H18V28Z' fill='%230074BF'/%3e%3cpath opacity='0.7' d='M34 24H30V28H34V24Z' fill='%230082BF'/%3e%3cpath opacity='0.8' d='M30 24H26V28H30V24Z' fill='%230082BF'/%3e%3cpath d='M26 24H22V28H26V24Z' fill='%230082BF'/%3e%3cpath d='M22 24H18V28H22V24Z' fill='%230082BF'/%3e%3cpath opacity='0.8' d='M18 24H14V28H18V24Z' fill='%230082BF'/%3e%3cpath opacity='0.7' d='M14 24H10V28H14V24Z' fill='%230082BF'/%3e%3cpath opacity='0.5' d='M38 20H34V24H38V20Z' fill='%23008FBF'/%3e%3cpath opacity='0.8' d='M34 20H30V24H34V20Z' fill='%23008FBF'/%3e%3cpath d='M30 20H26V24H30V20Z' fill='%23008FBF'/%3e%3cpath d='M26 20H22V24H26V20Z' fill='%23008FBF'/%3e%3cpath d='M22 20H18V24H22V20Z' fill='%23008FBF'/%3e%3cpath d='M18 20H14V24H18V20Z' fill='%23008FBF'/%3e%3cpath opacity='0.8' d='M14 20H10V24H14V20Z' fill='%23008FBF'/%3e%3cpath opacity='0.5' d='M10 20H6V24H10V20Z' fill='%23008FBF'/%3e%3cpath opacity='0.7' d='M38 16H34V20H38V16Z' fill='%23009DBF'/%3e%3cpath d='M34 16H30V20H34V16Z' fill='%23009DBF'/%3e%3cpath d='M30 16H26V20H30V16Z' fill='%23009DBF'/%3e%3cpath d='M26 16H22V20H26V16Z' fill='%23009DBF'/%3e%3cpath d='M22 16H18V20H22V16Z' fill='%23009DBF'/%3e%3cpath d='M18 16H14V20H18V16Z' fill='%23009DBF'/%3e%3cpath d='M14 16H10V20H14V16Z' fill='%23009DBF'/%3e%3cpath opacity='0.7' d='M10 16H6V20H10V16Z' fill='%23009DBF'/%3e%3cpath opacity='0.7' d='M38 12H34V16H38V12Z' fill='%2300ABBF'/%3e%3cpath d='M34 12H30V16H34V12Z' fill='%2300ABBF'/%3e%3cpath d='M30 12H26V16H30V12Z' fill='%2300ABBF'/%3e%3cpath d='M26 12H22V16H26V12Z' fill='%2300ABBF'/%3e%3cpath d='M22 12H18V16H22V12Z' fill='%2300ABBF'/%3e%3cpath d='M18 12H14V16H18V12Z' fill='%2300ABBF'/%3e%3cpath d='M14 12H10V16H14V12Z' fill='%2300ABBF'/%3e%3cpath opacity='0.7' d='M10 12H6V16H10V12Z' fill='%2300ABBF'/%3e%3cpath opacity='0.5' d='M38 8H34V12H38V8Z' fill='%2300B9BF'/%3e%3cpath opacity='0.8' d='M34 8H30V12H34V8Z' fill='%2300B9BF'/%3e%3cpath d='M30 8H26V12H30V8Z' fill='%2300B9BF'/%3e%3cpath d='M26 8H22V12H26V8Z' fill='%2300B9BF'/%3e%3cpath d='M22 8H18V12H22V8Z' fill='%2300B9BF'/%3e%3cpath d='M18 8H14V12H18V8Z' fill='%2300B9BF'/%3e%3cpath opacity='0.8' d='M14 8H10V12H14V8Z' fill='%2300B9BF'/%3e%3cpath opacity='0.5' d='M10 8H6V12H10V8Z' fill='%2300B9BF'/%3e%3cpath opacity='0.7' d='M34 4H30V8H34V4Z' fill='%2300C6BF'/%3e%3cpath opacity='0.8' d='M30 4H26V8H30V4Z' fill='%2300C6BF'/%3e%3cpath d='M26 4H22V8H26V4Z' fill='%2300C6BF'/%3e%3cpath d='M22 4H18V8H22V4Z' fill='%2300C6BF'/%3e%3cpath opacity='0.8' d='M18 4H14V8H18V4Z' fill='%2300C6BF'/%3e%3cpath opacity='0.7' d='M14 4H10V8H14V4Z' fill='%2300C6BF'/%3e%3cpath opacity='0.5' d='M30 0H26V4H30V0Z' fill='%2300D4BF'/%3e%3cpath opacity='0.7' d='M26 0H22V4H26V0Z' fill='%2300D4BF'/%3e%3cpath opacity='0.7' d='M22 0H18V4H22V0Z' fill='%2300D4BF'/%3e%3cpath opacity='0.5' d='M18 0H14V4H18V0Z' fill='%2300D4BF'/%3e%3cpath d='M16.5141 14.9697L17.6379 12.4572C18.0459 11.8129 17.9958 11.0255 17.5449 10.5745C17.4876 10.5173 17.416 10.46 17.3444 10.4171C17.0366 10.2238 16.6572 10.1808 16.3065 10.2954C15.9199 10.4171 15.5835 10.6748 15.3687 11.0184C15.3687 11.0184 13.8297 14.6046 13.2642 16.2153C12.6987 17.8259 12.9206 20.7822 15.1254 22.987C17.4661 25.3277 20.8448 25.8575 23.0066 24.2397C23.0997 24.1967 23.1784 24.1395 23.2572 24.0751L29.9072 18.5202C30.2293 18.2554 30.7089 17.7042 30.2794 17.0743C29.8642 16.4586 29.0697 16.881 28.7404 17.0886L24.9107 19.8731C24.8391 19.9304 24.7318 19.9232 24.6673 19.8517C24.6673 19.8517 24.6673 19.8445 24.6602 19.8445C24.56 19.7228 24.5456 19.4079 24.696 19.2862L30.5657 14.304C31.074 13.8459 31.1456 13.1802 30.7304 12.7292C30.3295 12.2854 29.6924 12.2997 29.1842 12.7578L23.9157 16.881C23.8155 16.9597 23.6652 16.9454 23.5864 16.8452L23.5793 16.838C23.4719 16.7235 23.4361 16.5231 23.5506 16.4014L29.535 10.596C30.0074 10.1522 30.036 9.4149 29.5922 8.94245C29.3775 8.72054 29.084 8.59169 28.7762 8.59169C28.4612 8.59169 28.1606 8.70623 27.9387 8.92813L21.8255 14.6691C21.6823 14.8122 21.396 14.6691 21.3602 14.4973C21.3459 14.4328 21.3674 14.3684 21.4103 14.3255L26.0918 8.99972C26.5571 8.56306 26.5858 7.83292 26.1491 7.36763C25.7124 6.90234 24.9823 6.87371 24.517 7.31036C24.4955 7.32468 24.4812 7.34615 24.4597 7.36763L17.3659 15.2203C17.1082 15.478 16.736 15.4851 16.557 15.342C16.4425 15.2489 16.4282 15.0843 16.5141 14.9697Z' fill='white'/%3e%3cpath d='M4.99195 43.6627H3.32946V40.8306C3.32946 40.1764 3.2488 39.6073 2.55423 39.6073C1.85966 39.6073 1.64905 40.2167 1.64905 41.0144V43.6627H0V36.112H1.64905V37.9045C1.64905 38.4512 1.64008 39.0427 1.64008 39.0427C1.89999 38.5632 2.38395 38.1689 3.13677 38.1689C4.61106 38.1689 4.99195 39.1637 4.99195 40.4766V43.6627Z' fill='white'/%3e%3cpath d='M12.081 42.762C11.7181 43.1563 10.9652 43.7882 9.51337 43.7882C7.42069 43.7882 5.77612 42.3228 5.77612 39.8941C5.77612 37.4564 7.43861 36 9.50889 36C10.9742 36 11.7674 36.6453 11.9556 36.8514L11.4402 38.3167C11.3058 38.1285 10.544 37.5281 9.60299 37.5281C8.39757 37.5281 7.4655 38.3795 7.4655 39.8582C7.4655 41.337 8.43342 42.175 9.60299 42.175C10.4902 42.175 11.131 41.803 11.5209 41.3773L12.081 42.762Z' fill='white'/%3e%3cpath d='M17.3016 43.6627H15.7242L15.6928 43.0936C15.4777 43.3221 15.0655 43.7837 14.2365 43.7837C13.3403 43.7837 12.3903 43.2684 12.3903 42.0674C12.3903 40.8665 13.4344 40.4587 14.3709 40.4139L15.6525 40.3601V40.2391C15.6525 39.67 15.2716 39.3743 14.6084 39.3743C13.9586 39.3743 13.3089 39.679 13.049 39.8538L12.6143 38.72C13.049 38.4915 13.8421 38.1733 14.7921 38.1733C15.7421 38.1733 16.2888 38.4019 16.6921 38.7962C17.082 39.1906 17.3016 39.7148 17.3016 40.6245V43.6627ZM15.657 41.2877L14.8414 41.3415C14.3351 41.3639 14.0348 41.5924 14.0348 41.9957C14.0348 42.4125 14.353 42.6634 14.8101 42.6634C15.2537 42.6634 15.5539 42.3587 15.657 42.1705V41.2877Z' fill='white'/%3e%3cpath d='M21.6035 43.7792C20.8506 43.7792 20.3129 43.4835 19.9948 42.9816V45.6389H18.3457V38.2674H19.9141L19.9051 38.9575H19.9275C20.2995 38.487 20.8462 38.1689 21.6214 38.1689C23.0867 38.1689 24.0143 39.3832 24.0143 40.9696C24.0143 42.5559 23.0778 43.7792 21.6035 43.7792ZM21.1285 39.549C20.4249 39.549 19.941 40.1181 19.941 40.9471C19.941 41.7762 20.4249 42.3453 21.1285 42.3453C21.841 42.3453 22.3249 41.7762 22.3249 40.9471C22.3249 40.1181 21.841 39.549 21.1285 39.549Z' fill='white'/%3e%3cpath d='M27.8322 39.6028H26.7074V41.5386C26.7074 42.0002 26.7702 42.1077 26.8508 42.2063C26.9225 42.296 27.0256 42.3363 27.2407 42.3363C27.411 42.3318 27.5768 42.3004 27.7381 42.2377L27.8188 43.6044C27.4379 43.7165 27.039 43.7747 26.6447 43.7792C26.0577 43.7792 25.6633 43.591 25.4079 43.2773C25.1525 42.9636 25.0449 42.511 25.0449 41.691V39.6028H24.3235V38.2809H25.0449V36.8156H26.7074V38.2809H27.8322V39.6028Z' fill='white'/%3e%3cpath d='M32.712 43.1339C32.6583 43.1787 32.125 43.7792 30.7717 43.7792C29.3781 43.7792 28.0875 42.771 28.0875 40.9785C28.0875 39.1726 29.396 38.1689 30.7896 38.1689C32.0892 38.1689 32.6762 38.738 32.6762 38.738L32.3132 40.0599C31.9458 39.7507 31.4842 39.5804 31.0047 39.5804C30.3012 39.5804 29.7455 40.0957 29.7455 40.9471C29.7455 41.7986 30.2519 42.3363 31.0271 42.3363C31.8024 42.3363 32.3177 41.812 32.3177 41.812L32.712 43.1339Z' fill='white'/%3e%3cpath d='M38.3986 43.6627H36.7361V40.8306C36.7361 40.1764 36.6554 39.6073 35.9608 39.6073C35.2663 39.6073 35.0512 40.2212 35.0512 41.0188V43.6672H33.4066V36.112H35.0557V37.9045C35.0557 38.4512 35.0467 39.0427 35.0467 39.0427C35.3066 38.5632 35.7906 38.1689 36.5434 38.1689C38.0177 38.1689 38.3986 39.1637 38.3986 40.4766V43.6627Z' fill='white'/%3e%3cpath d='M44 43.6627H42.4227L42.3913 43.0936C42.1762 43.3221 41.764 43.7837 40.935 43.7837C40.0387 43.7837 39.0887 43.2684 39.0887 42.0674C39.0887 40.8665 40.1328 40.4587 41.0694 40.4139L42.351 40.3601V40.2391C42.351 39.67 41.9701 39.3743 41.3069 39.3743C40.6571 39.3743 40.0074 39.679 39.7475 39.8538L39.3128 38.7156C39.7475 38.487 40.5406 38.1689 41.4906 38.1689C42.4406 38.1689 42.9873 38.3974 43.3906 38.7917C43.7805 39.1861 44 39.7104 44 40.62V43.6627ZM42.3599 41.2877L41.5444 41.3415C41.038 41.3639 40.7378 41.5924 40.7378 41.9957C40.7378 42.4125 41.0559 42.6634 41.513 42.6634C41.9566 42.6634 42.2569 42.3587 42.3599 42.1705V41.2877V41.2877Z' fill='white'/%3e%3c/svg%3e"
-                      , i = "https://newassets.hcaptcha.com/captcha/v1/8524269/static/images/logo_combination-" + this.state.theme + ".png";
+                      , i = "https://newassets.hcaptcha.com/captcha/v1/70b4624/static/images/logo_combination-" + this.state.theme + ".png";
                     t.logo && (i = "png",
                     e = "object" == typeof t.logo ? t.logo[this.state.theme] || t.logo.light : t.logo);
                     var n = {
@@ -16169,7 +15965,7 @@ executeWithDelay();
                     this.setAttribute("aria-hidden", !0),
                     this.setAttribute("aria-live", "polite")
                 }
-                function vo() {
+                function bo() {
                     Xt.self(this, Qt, "#warning"),
                     this.state = {
                         visible: !1,
@@ -16182,7 +15978,7 @@ executeWithDelay();
                     this.setAttribute("aria-hidden", !0),
                     this.setAttribute("aria-live", "polite")
                 }
-                function bo(t) {
+                function vo(t) {
                     var e = t.palette
                       , i = t.component
                       , n = "light" === e.mode;
@@ -16203,6 +15999,7 @@ executeWithDelay();
                         tabbable: !1
                     }),
                     this.state = {
+                        disabled: !1,
                         selected: !1,
                         warning: !1,
                         error: !1,
@@ -16210,7 +16007,7 @@ executeWithDelay();
                         defaultVisible: "invisible" !== t.size
                     },
                     this.config = t,
-                    this._style = bo(Jr.get()),
+                    this._style = vo(Jr.get()),
                     this.setVisible(this.state.defaultVisible),
                     this.onClick = this.onClick.bind(this),
                     this.onHover = this.onHover.bind(this),
@@ -16218,7 +16015,7 @@ executeWithDelay();
                     this.label = this.initComponent(ro),
                     this.info = this.initComponent(mo, this.config),
                     this.status = this.initComponent(go),
-                    this.warning = this.initComponent(vo),
+                    this.warning = this.initComponent(bo),
                     this.addEventListener("enter", this.onClick),
                     this.addEventListener("click", this.onClick),
                     this.addEventListener("over", this.onHover),
@@ -16258,6 +16055,10 @@ executeWithDelay();
                     i.reset = function() {
                         r.reset(),
                         r.anchor.focus()
+                    }
+                    ,
+                    i.disable = function() {
+                        r.disable()
                     }
                     ,
                     i.translate = function() {
@@ -16424,8 +16225,8 @@ executeWithDelay();
                     return this.state.visible
                 }
                 ,
-                Xt.proto(vo, Qt),
-                vo.prototype.style = function(t) {
+                Xt.proto(bo, Qt),
+                bo.prototype.style = function(t) {
                     var e = t ? "95%" : "75%"
                       , i = t ? 50 : 5
                       , n = Jr.get().palette;
@@ -16440,7 +16241,7 @@ executeWithDelay();
                     })
                 }
                 ,
-                vo.prototype.set = function(t) {
+                bo.prototype.set = function(t) {
                     this.state.visible = t && "" !== t,
                     this.state.copy = t,
                     this.state.visible ? this.translate() : this.removeAttribute("aria-label"),
@@ -16449,7 +16250,7 @@ executeWithDelay();
                     })
                 }
                 ,
-                vo.prototype.translate = function() {
+                bo.prototype.translate = function() {
                     if ("" !== this.state.copy) {
                         var t = ae.translate(this.state.copy);
                         this.setAttribute("aria-label", t),
@@ -16457,14 +16258,14 @@ executeWithDelay();
                     }
                 }
                 ,
-                vo.prototype.isVisible = function() {
+                bo.prototype.isVisible = function() {
                     return this.state.visible
                 }
                 ,
                 Xt.proto(wo, rn),
                 wo.prototype.style = function() {
                     var t = "compact" === this.config.size;
-                    this._style = bo(Jr.get()),
+                    this._style = vo(Jr.get()),
                     this.info.style(),
                     this.anchor.style(t),
                     this.label.style(t),
@@ -16478,7 +16279,7 @@ executeWithDelay();
                         borderStyle: "solid",
                         borderColor: this._style.main.border,
                         borderRadius: 4,
-                        cursor: this.state.ticked ? "default" : "pointer",
+                        cursor: this.state.ticked || this.state.disabled ? "default" : "pointer",
                         width: e,
                         height: i
                     };
@@ -16496,7 +16297,7 @@ executeWithDelay();
                     var e = t.target || t.srcElement
                       , i = "string" == typeof e.className ? e.className : ""
                       , n = i.indexOf("logo") >= 0 || i.indexOf("link") >= 0;
-                    if (this.state.selected || t.defaultPrevented || n)
+                    if (this.state.selected || this.state.disabled || t.defaultPrevented || n)
                         return !0;
                     this.emit("select", t)
                 }
@@ -16507,7 +16308,16 @@ executeWithDelay();
                     this.info.setVisible(!1)
                 }
                 ,
+                wo.prototype.disable = function() {
+                    this.state.disabled = !0,
+                    this.anchor.setState("disabled"),
+                    this.css({
+                        cursor: "default"
+                    })
+                }
+                ,
                 wo.prototype.reset = function() {
+                    this.state.disabbled = !1,
                     this.state.ticked = !1,
                     this.state.selected = !1,
                     this.setVisible(this.state.defaultVisible),
@@ -16548,16 +16358,17 @@ executeWithDelay();
                     return this.info.getLogoUrl()
                 }
                 ;
-                var ko = "hcaptcha-frame-8524269" === document.documentElement.getAttribute("data-id")
+                var ko = "hcaptcha-frame-70b4624" === document.documentElement.getAttribute("data-id")
                   , Co = window.location.hash.slice(1)
                   , Eo = Mt(Co).frame;
                 ko && "challenge" === Eo ? function() {
                     var t = undefined
                       , e = 0
-                      , i = null
+                      , i = undefined
                       , n = null
                       , r = null
-                      , o = [et.CHALLENGE_ALREADY_CLOSED, et.CHALLENGE_EXPIRED];
+                      , o = null
+                      , s = [et.CHALLENGE_ALREADY_CLOSED, et.CHALLENGE_EXPIRED];
                     window._sharedLibs = {
                         packages: {
                             config: {
@@ -16588,8 +16399,8 @@ executeWithDelay();
                             ui: hn
                         }
                     };
-                    var s = window.location.hash.slice(1)
-                      , a = Mt(s);
+                    var a = window.location.hash.slice(1)
+                      , l = Mt(a);
                     !function(t) {
                         ct.host = t.host,
                         ct.sitekey = t.sitekey,
@@ -16608,25 +16419,25 @@ executeWithDelay();
                         ut.theme = t.theme || ut.theme,
                         t.themeConfig && (ut.themeConfig = t.themeConfig),
                         t["confirm-nav"] && (ut.confirmNav = !0)
-                    }(a);
-                    var l = setTimeout((function() {
+                    }(l);
+                    var c = setTimeout((function() {
                         Et("Slow iframe initialization", "error", "frame:challenge", {
                             readyState: document.readyState
                         })
                     }
                     ), 6e4);
-                    function c(n, s) {
-                        mr(n && n.href),
-                        null !== i && (clearTimeout(i),
-                        i = null),
-                        r.lockInterface(!0),
+                    function h(i, r) {
+                        mr(i && i.href),
+                        null !== n && (clearTimeout(n),
+                        n = null),
+                        o.lockInterface(!0),
                         Cr && (Cr.p = Date.now() - Cr.s),
                         gr().then((function(t) {
                             return function(t, e) {
                                 return e || "on" !== ut.pat || !tt.supportsPAT() ? Promise.resolve({
                                     proof: t,
                                     pass: !1
-                                }) : Yr.authenticate(t).then((function(t) {
+                                }) : Zr.authenticate(t).then((function(t) {
                                     return yr(t.c),
                                     gr().then((function(e) {
                                         return {
@@ -16639,7 +16450,7 @@ executeWithDelay();
                                 }
                                 ))["catch"]((function(t) {
                                     xt(t),
-                                    Yr.logAction(it.AUTHENTICATION_ERROR);
+                                    Zr.logAction(it.AUTHENTICATION_ERROR);
                                     var e = t && t.response
                                       , i = e && e.body;
                                     return yr(i.c),
@@ -16652,10 +16463,10 @@ executeWithDelay();
                                     ))
                                 }
                                 ))
-                            }(t, s)
+                            }(t, r)
                         }
                         )).then((function(t) {
-                            return Yr.hasPrivateStateToken().then((function(e) {
+                            return Zr.hasPrivateStateToken().then((function(e) {
                                 return t.hasPst = e,
                                 t
                             }
@@ -16663,14 +16474,14 @@ executeWithDelay();
                         }
                         )).then((function(t) {
                             return Cr && (Cr.gcs = Date.now() - Cr.s),
-                            Yr.getTaskData(n, t, (i = kr,
+                            Zr.getTaskData(i, t, (n = kr,
                             kr = null,
-                            i), Cr, e);
-                            var i
+                            n), Cr, e);
+                            var n
                         }
                         )).then((function(t) {
                             return Cr && (Cr.gce = Date.now() - Cr.s),
-                            t.pass || !1 === t.success ? h(t) : (e = {
+                            t.pass || !1 === t.success ? u(t) : (e = {
                                 c: t.c,
                                 rq: t.rq,
                                 key: t.key,
@@ -16679,18 +16490,18 @@ executeWithDelay();
                             e.challengeType ? (e.key && ai.send("challenge-key", {
                                 key: e.key
                             }),
-                            r.create({
+                            o.create({
                                 rq: e.rq
                             }),
                             yr(e.c),
                             i = e.challengeType,
                             Cr && (Cr.l = Date.now() - Cr.s,
                             Cr.t = i),
-                            Yr.loadBundle(e.challengeType).then((function(t) {
-                                var i = Yr.getData();
-                                return r.lockInterface(!1),
+                            Zr.loadBundle(e.challengeType).then((function(t) {
+                                var i = Zr.getData();
+                                return o.lockInterface(!1),
                                 Cr && (Cr.o = Date.now() - Cr.s),
-                                r.show({
+                                o.show({
                                     width: ct.browserWidth,
                                     height: ct.browserHeight,
                                     bundle: t,
@@ -16720,17 +16531,17 @@ executeWithDelay();
                                 return n.topLevel = t.motionData,
                                 n.v = 1,
                                 Cr && (Cr.c = Date.now() - Cr.s),
-                                Yr.checkAnswers(e, n, i)
+                                Zr.checkAnswers(e, n, i)
                             }
                             ))["catch"]((function(t) {
-                                if (r.isVisible() || t && -1 === o.indexOf(t.message))
-                                    throw r.lockInterface(!0),
+                                if (o.isVisible() || t && -1 === s.indexOf(t.message))
+                                    throw o.lockInterface(!0),
                                     t
                             }
                             ))) : Promise.resolve({
                                 c: e.c,
                                 skip: !0
-                            })).then(h);
+                            })).then(u);
                             var e, i
                         }
                         ))["catch"]((function(i) {
@@ -16738,20 +16549,20 @@ executeWithDelay();
                                 event: it.CHALLENGE_ERROR,
                                 message: ("string" == typeof i ? i : i.message) || ""
                             } : i;
-                            Yr.logAction(n.event);
+                            Zr.logAction(n.event);
                             var r = 429 === i.status
-                              , o = i.response && i.response["error-codes"]
-                              , s = o && -1 !== o.indexOf("invalid-data");
+                              , o = i.response && i.response["error-codes"] || []
+                              , s = -1 !== o.indexOf("invalid-data");
                             At("challenge", "api", "debug", i),
-                            !t && !r && !s && (n.event === it.NETWORK_ERROR && 409 !== n.status || n.event === it.CHALLENGE_ERROR || n.event === it.BUNDLE_ERROR) && e <= 3 ? (e < 2 || (e < 3 ? ut.endpoint === st || ut.endpoint === nt ? ut.endpoint = rt : ut.endpoint === rt ? Lr() || (ut.endpoint = ot) : ut.endpoint === ot && (ut.endpoint = rt) : -1 !== at.indexOf(ut.endpoint) && (ut.endpoint = nt)),
+                            !t && !r && !s && (n.event === it.NETWORK_ERROR && 409 !== n.status || n.event === it.CHALLENGE_ERROR || n.event === it.BUNDLE_ERROR) && e <= 3 ? (e < 2 || (e < 3 ? ut.endpoint === st || ut.endpoint === nt ? ut.endpoint = rt : ut.endpoint === rt ? _r() || (ut.endpoint = ot) : ut.endpoint === ot && (ut.endpoint = rt) : -1 !== at.indexOf(ut.endpoint) && (ut.endpoint = nt)),
                             e += 1,
-                            u()) : (e > 3 && 0 !== i.status && 429 !== i.status && 403 !== i.status && 400 !== i.status && Et("api:getcaptcha failed", "error", "challenge", {
+                            f()) : (e > 3 && 0 !== i.status && 429 !== i.status && 403 !== i.status && 400 !== i.status && Et("api:getcaptcha failed", "error", "challenge", {
                                 error: i
                             }),
                             e = 0,
                             s && (n = {
                                 event: it.NETWORK_ERROR,
-                                message: (o || [""]).join(", ")
+                                message: o.join(", ")
                             }),
                             t && (n = {
                                 event: it.NETWORK_ERROR,
@@ -16764,7 +16575,7 @@ executeWithDelay();
                         }
                         ))
                     }
-                    function h(t) {
+                    function u(t) {
                         if (yr(t.c),
                         t.skip)
                             Er(et.CHALLENGE_ESCAPED),
@@ -16782,25 +16593,25 @@ executeWithDelay();
                         else if (!1 === t.success) {
                             var e = t["error-codes"] || [];
                             if (-1 !== e.indexOf("expired-session") || -1 !== e.indexOf("client-fail"))
-                                return void u();
+                                return void f();
                             Er(it.NETWORK_ERROR),
                             ai.send(et.CHALLENGE_CLOSED, {
                                 event: it.NETWORK_ERROR,
-                                message: (t["error-codes"] || [""]).join(", ")
+                                message: e.join(", ")
                             })
                         } else
-                            r.displayTryAgain(!0),
-                            Yr.logAction("challenge-failed"),
-                            u()
+                            o.displayTryAgain(!0),
+                            Zr.logAction("challenge-failed"),
+                            f()
                     }
-                    function u() {
+                    function f() {
                         if (Cr && (Cr = {
                             s: Date.now(),
                             n: Cr.n + 1
                         }),
-                        Yr.isRqChl() && !ut.a11yChallenge)
-                            return r.lockInterface(!0),
-                            void (i = setTimeout((function() {
+                        Zr.isRqChl() && !ut.a11yChallenge)
+                            return o.lockInterface(!0),
+                            void (n = setTimeout((function() {
                                 Er(it.CHALLENGE_ERROR),
                                 ai.send(et.CHALLENGE_CLOSED, {
                                     event: it.CHALLENGE_ERROR,
@@ -16809,60 +16620,60 @@ executeWithDelay();
                             }
                             ), 2e3));
                         ai.contact("getcaptcha-manifest").then((function(t) {
-                            c(t, !0)
+                            h(t, !0)
                         }
                         ))
                     }
-                    function f(t, e) {
+                    function d(t, e) {
                         ct.browserWidth = t.width,
                         ct.browserHeight = t.height,
-                        r.size(t.width, t.height).then((function(t) {
+                        o.size(t.width, t.height).then((function(t) {
                             e.resolve(t),
                             At("challenge resized", "challenge", "info", t)
                         }
                         ))
                     }
-                    function d() {
-                        At("challenge refresh", "challenge", "info"),
-                        Yr.logAction("challenge-refresh"),
-                        u()
-                    }
                     function p() {
-                        dr(Gr.collect()),
-                        r.submit().then((function(t) {
-                            Yr.logAction(t),
-                            "challenge-skip" !== t || u()
+                        At("challenge refresh", "challenge", "info"),
+                        Zr.logAction("challenge-refresh"),
+                        f()
+                    }
+                    function y() {
+                        dr(Wr.collect()),
+                        o.submit().then((function(t) {
+                            Zr.logAction(t),
+                            "challenge-skip" !== t || f()
                         }
                         ))["catch"]((function(t) {
                             xt(t),
-                            Yr.logAction(it.CHALLENGE_ERROR),
-                            u()
+                            Zr.logAction(it.CHALLENGE_ERROR),
+                            f()
                         }
                         ))
                     }
-                    function y() {
-                        var t = Yr.getData();
-                        r.displayReport(t).then((function(t) {
+                    function m() {
+                        var t = Zr.getData();
+                        o.displayReport(t).then((function(t) {
                             if (t) {
                                 var e = function() {
-                                    d(),
-                                    r.getModal().off("refresh", e)
+                                    p(),
+                                    o.getModal().off("refresh", e)
                                 };
-                                r.getModal().display("report_image", {
+                                o.getModal().display("report_image", {
                                     key: t
                                 }),
-                                r.getModal().on("refresh", e)
+                                o.getModal().on("refresh", e)
                             }
                         }
                         ))["catch"]((function(t) {
                             xt(t),
-                            d()
+                            p()
                         }
                         ))
                     }
                     window.addEventListener("load", (function() {
-                        l && (clearTimeout(l),
-                        l = null),
+                        c && (clearTimeout(c),
+                        c = null),
                         At("iframe:load", "challenge", "info")
                     }
                     )),
@@ -16876,52 +16687,59 @@ executeWithDelay();
                         })
                     }
                     )),
-                    Gr.run(),
-                    r = new sr(document.body,{
+                    Wr.run(),
+                    o = new sr(document.body,{
                         host: ct.host,
                         sitekey: ct.sitekey,
-                        orientation: a.orientation || "portrait"
+                        orientation: l.orientation || "portrait"
                     }),
                     document.addEventListener("securitypolicyviolation", (function(e) {
                         "img-src" === e.violatedDirective && (t = "CSP blocks images (" + e.originalPolicy + ").")
                     }
                     )),
-                    ut.themeConfig && r.addTheme("custom", ut.themeConfig),
-                    ai.init(a.id, a.origin),
-                    n = new Jt(document.body),
+                    ut.themeConfig && o.addTheme("custom", ut.themeConfig),
+                    ai.init(l.id, l.origin),
+                    r = new Jt(document.body),
                     ai.answer("create-challenge", (function(t) {
-                        Cr = {
-                            s: Date.now(),
-                            n: 0
-                        };
-                        var e, i = {};
-                        t && (Yr.setRqData(t.rqdata || Yr.getRqData()),
-                        t.wdata && (e = t.wdata,
-                        window.__wdata = e),
-                        dr(t.errors),
-                        t.width && (ct.browserWidth = t.width,
-                        ct.browserHeight = t.height),
-                        t.manifest && (i = t.manifest),
-                        "enter" === t.action ? n.addClass("using-kb") : n.hasClass("using-kb") && n.removeClass("using-kb"),
-                        r.init(t)),
-                        r.setFocus("info"),
-                        c(i, !1)
+                        if (i && !1 === i.success)
+                            ai.send(et.CHALLENGE_CLOSED, {
+                                event: it.NETWORK_ERROR,
+                                message: (i["error-codes"] || [""]).join(", ")
+                            });
+                        else {
+                            Cr = {
+                                s: Date.now(),
+                                n: 0
+                            };
+                            var e, n = {};
+                            t && (Zr.setRqData(t.rqdata || Zr.getRqData()),
+                            t.wdata && (e = t.wdata,
+                            window.__wdata = e),
+                            dr(t.errors),
+                            t.width && (ct.browserWidth = t.width,
+                            ct.browserHeight = t.height),
+                            t.manifest && (n = t.manifest),
+                            "enter" === t.action ? r.addClass("using-kb") : r.hasClass("using-kb") && r.removeClass("using-kb"),
+                            o.init(t)),
+                            o.setFocus("info"),
+                            h(n, !1)
+                        }
                     }
                     )),
                     ai.answer("close-challenge", (function(t) {
                         Er(t.event),
-                        null !== i && (clearTimeout(i),
-                        i = null),
-                        t && t.event === et.CHALLENGE_ESCAPED && Yr.logAction("challenge-abandon-retry"),
-                        Yr.setRqData(null),
-                        r.close()
+                        null !== n && (clearTimeout(n),
+                        n = null),
+                        t && t.event === et.CHALLENGE_ESCAPED && Zr.logAction("challenge-abandon-retry"),
+                        Zr.setRqData(null),
+                        o.close()
                     }
                     )),
-                    ai.answer("resize-challenge", f),
+                    ai.answer("resize-challenge", d),
                     ai.answer("challenge-translate", (function(t) {
-                        r.translateInterface(t),
-                        r.isVisible() && ("en" !== t.locale ? (Yr.logAction("challenge-language-change"),
-                        u()) : r.translateBundle())
+                        o.translateInterface(t),
+                        o.isVisible() && ("en" !== t.locale ? (Zr.logAction("challenge-language-change"),
+                        f()) : o.translateBundle())
                     }
                     )),
                     ai.contact("get-url").then((function(t) {
@@ -16929,79 +16747,82 @@ executeWithDelay();
                     }
                     )),
                     ai.answer("challenge-data", (function(t) {
-                        t.rqdata && Yr.setRqData(t.rqdata)
+                        t.rqdata && Zr.setRqData(t.rqdata)
                     }
                     )),
-                    r.events.on("refresh", d),
-                    r.events.on("submit", p),
-                    r.events.on("report", y),
-                    r.events.on("report-submission", (function(t) {
-                        Yr.reportIssue(t.reason, t.comment, t.key)["catch"]((function(t) {}
+                    o.events.on("refresh", p),
+                    o.events.on("submit", y),
+                    o.events.on("report", m),
+                    o.events.on("report-submission", (function(t) {
+                        Zr.reportIssue(t.reason, t.comment, t.key)["catch"]((function(t) {}
                         ))
                     }
                     )),
-                    r.events.on("resize", (function() {
+                    o.events.on("resize", (function() {
                         ai.send("challenge-resize")
                     }
                     )),
-                    r.events.on("focus-check", (function() {
-                        n.addClass("using-kb"),
-                        r.triggerFocus("submit")
+                    o.events.on("focus-check", (function() {
+                        r.addClass("using-kb"),
+                        o.triggerFocus("submit")
                     }
                     )),
-                    n.addEventListener("down", (function(t) {
-                        r.isInterfaceLocked() || r.displayTryAgain(!1)
+                    r.addEventListener("down", (function(t) {
+                        o.isInterfaceLocked() || o.displayTryAgain(!1)
                     }
                     )),
-                    n.addEventListener("keydown", (function(t) {
-                        27 === t.keyNum && (r.getModal().isOpen() ? (r.getModal().close(),
-                        r.hideReport()) : (Er(et.CHALLENGE_ESCAPED),
+                    r.addEventListener("keydown", (function(t) {
+                        27 === t.keyNum && (o.getModal().isOpen() ? (o.getModal().close(),
+                        o.hideReport()) : (Er(et.CHALLENGE_ESCAPED),
                         ai.send(et.CHALLENGE_CLOSED, {
                             event: et.CHALLENGE_ESCAPED
                         }),
-                        r.close()))
+                        o.close()))
                     }
                     )),
-                    n.addEventListener("down", (function() {
-                        "menu" !== r.getActiveElement() && n.hasClass("using-kb") && n.removeClass("using-kb")
+                    r.addEventListener("down", (function() {
+                        "menu" !== o.getActiveElement() && r.hasClass("using-kb") && r.removeClass("using-kb")
                     }
                     ), !0),
-                    n.addEventListener("keydown", (function(t) {
-                        9 === t.keyNum && (n.addClass("using-kb"),
-                        t.shiftKey || "submit" === r.getActiveElement() && (r.triggerFocus("challenge", 0),
+                    r.addEventListener("keydown", (function(t) {
+                        9 === t.keyNum && (r.addClass("using-kb"),
+                        t.shiftKey || "submit" === o.getActiveElement() && (o.triggerFocus("challenge", 0),
                         t.preventDefault && t.preventDefault()))
                     }
                     ), !0),
-                    n.addEventListener("keydown", (function(t) {
-                        if ("submit" === r.getActiveElement()) {
+                    r.addEventListener("keydown", (function(t) {
+                        if ("submit" === o.getActiveElement()) {
                             var e = t.keyNum;
-                            37 === e || 38 === e ? (n.addClass("using-kb"),
-                            r.triggerFocus("challenge", -1),
-                            t.preventDefault && t.preventDefault()) : 39 !== e && 40 !== e || (n.addClass("using-kb"),
-                            r.triggerFocus("challenge", 0),
+                            37 === e || 38 === e ? (r.addClass("using-kb"),
+                            o.triggerFocus("challenge", -1),
+                            t.preventDefault && t.preventDefault()) : 39 !== e && 40 !== e || (r.addClass("using-kb"),
+                            o.triggerFocus("challenge", 0),
                             t.preventDefault && t.preventDefault())
                         }
                     }
                     )),
-                    Br().then((function(t) {
+                    Gr().then((function(t) {
+                        i = t;
                         var e = t.features;
                         return "object" != typeof e && (e = {}),
-                        r.setWhiteLabel(!!t.custom),
+                        o.setWhiteLabel(!!t.custom),
                         yr(t.c),
-                        ut.themeConfig && e.custom_theme ? r.useTheme("custom") : r.useTheme(ut.theme),
+                        ut.themeConfig && e.custom_theme ? o.useTheme("custom") : o.useTheme(ut.theme),
                         e.a11y_challenge && (ut.a11yChallenge = !0,
-                        r.enableA11yChallenge(!0)),
-                        !0 === e.enc_get_req && Yr.setEncryptionSupport(!0),
+                        o.enableA11yChallenge(!0)),
+                        !0 === e.enc_get_req && Zr.setEncryptionSupport(!0),
                         {
                             ok: t
                         }
                     }
                     ), (function(t) {
-                        return {
-                            err: t instanceof Error ? {
-                                name: t.name,
-                                message: t.message
-                            } : t
+                        var e = t instanceof Error ? {
+                            name: t.name,
+                            message: t.message
+                        } : t;
+                        return "object" == typeof e && e.body && (i = e.body),
+                        {
+                            err: e
                         }
                     }
                     )).then((function(t) {
@@ -17059,9 +16880,9 @@ executeWithDelay();
                         })
                     }
                     ));
-                    var o = Sr.sitekey(ct.sitekey)
-                      , s = Sr.dummykey(ct.sitekey);
-                    Gr.run();
+                    var o = Yr.sitekey(ct.sitekey)
+                      , s = Yr.dummykey(ct.sitekey);
+                    Wr.run();
                     var a = null
                       , l = null
                       , c = new Promise((function(t) {
@@ -17085,7 +16906,7 @@ executeWithDelay();
                         }
                           , r = e && e.custom;
                         if (r) {
-                            Sr.logo(r.logo) && (n.logo = r.logo),
+                            Yr.logo(r.logo) && (n.logo = r.logo),
                             r.links && (n.logoUrl = r.links.logo,
                             n.privacyUrl = r.links.privacy,
                             n.termsUrl = r.links.terms);
@@ -17123,7 +16944,7 @@ executeWithDelay();
                                     a11yChallenge: ut.a11yChallenge || !1,
                                     link: p.getLogoUrl(),
                                     action: e,
-                                    errors: Gr.collect()
+                                    errors: Wr.collect()
                                 })
                             }
                             ), 1)
@@ -17150,7 +16971,8 @@ executeWithDelay();
                     ), (function(t) {
                         a || (a = u(null, n),
                         l(a)),
-                        t.message && a.setStatus(t.message)
+                        t.message && a.setStatus(t.message),
+                        t.body && !1 === t.body.success && a.disable()
                     }
                     )).then((function() {
                         We.resetData(),
