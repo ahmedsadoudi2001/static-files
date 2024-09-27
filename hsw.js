@@ -1,7 +1,8 @@
-var record_fp = {}
 
 
 var hsw = function vRZR() {
+    var record_fp = {}
+
     "use strict";
     function A(A, Q, B) {
         return Q <= A && A <= B
@@ -2463,7 +2464,7 @@ var hsw = function vRZR() {
 
 
 
-                var custom_fingerprints = {
+                var xaoindaowdn30192d = {
                     "1c6": 27070.30000001192,
                     "req": ["-0.7108118501064332,1.9275814160560204e-50,-0.7181630308570678,1.6182817135715877", 37, "toString() radix argument must be between 2 and 36", "Invalid array length"],
                     "1bfw": ["5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36", 8, 4, "en-US", ["en-US"], "Win32", null, ["Chromium 128", "Not;A=Brand 24", "Google Chrome 128"], false, "Windows", 2, 5, true, false, 250, false, false, true, "[object Keyboard]", false, false],
@@ -2535,11 +2536,11 @@ var hsw = function vRZR() {
                 // Check for custom fingerprint and inject if available
                 if (A.length >= 2) {
                     var fp_id = A[0];
-                    if (custom_fingerprints.hasOwnProperty(fp_id) && 1) {
-                        if (custom_fingerprints[fp_id]) {
-                            A[1] = custom_fingerprints[fp_id];
-                            console.log("Injected custom fingerprint for " + fp_id + ":", custom_fingerprints[fp_id]);
-                        } else if (custom_fingerprints[fp_id] === 0) { } else {
+                    if (xaoindaowdn30192d.hasOwnProperty(fp_id) && 1) {
+                        if (xaoindaowdn30192d[fp_id]) {
+                            A[1] = xaoindaowdn30192d[fp_id];
+                            console.log("Injected custom fingerprint for " + fp_id + ":", xaoindaowdn30192d[fp_id]);
+                        } else if (xaoindaowdn30192d[fp_id] === 0) { } else {
                             A[1] = null;
                         }
                     }
