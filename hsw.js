@@ -3053,7 +3053,7 @@ var hsw = function BWJky() {
                             "mediaRecorder": true
                         }
                     ],
-                    "1b3r": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAApxJREFUOE+9lF1Ik2EUx3/n1bLZxzRNoQ8tM3GyraSgqIuoiwQl90oSRkSEEWHRVRdBUkRUNwURLehDWPRBhTpTiMigqIsoiGxbWjBC1LLM0oQy59oTmw5dvjOI6Lk8539+5+M5zyP84yP/mMekQOW2LkakHIUVSEN4i/CEadIgRZ5vRsUYAlWdfT4apxE2xemgH1Q1Du85EdR4zQSgarStJcHcRF7lTGbmQO9z8LtGYqZnQ+42SEqD9/eg804zSYMbpdg/FIXGAFW9PQNNvca6P3Ug3cGFU2coKdex/HBB931YcxHXzRfMycyI2Lm/Eb51nBfdu9sY6LYdRaSadbVcvvoAl/M8Syz5XDjpgJfHaMu5RlXF9khs/aNmUruc0F4b5Odwlmxq6w7bYyt021oQWUrhEfzfLZw9cZL1xUWU5vmgw83w6qscPlzDrBQzB44fgYcV8LUNRO0Sh/diDFDdIoEptgAiGlNToGAfzMiGT0/hTVirYMZCsOwh4u9ohM6m0U6VU3Tv3ljg3YLZ/Ej8HDYO9U0jMHUlJCTGXdPQwEfM6T7QIpIbonu2xAKb5ibzMz2yW93PsvgyWIlpQWpcYM/dl6yqqolW6BLdu2PiDBtsH0Ayh/pNPD5UBGokvdHJWPoO+86nUVe16J5jBpdiv4RQGXb4Gwtob843hElCiNUHmzHNGX0sKlgoZa0tRhXaQDxhR2hYw3dlBT0t80CNLUNicgDL5hYyl3dFkz0Q3bPecA/DRtVgdYJWFRUEv0+hz5/OYO90zIs+Y87ui15EWBJECy6T0tZX8YF3cpMImOpASuIOcMQRRFPlUuq9PV5n/DkoNBrtGwiprYiUhV/xWJDyA9dBXRLd1/l70v/7H/6hZeMN+JugyWJ+AVVN2RU56UUaAAAAAElFTkSuQmCC",
+                    // "1b3r": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAApxJREFUOE+9lF1Ik2EUx3/n1bLZxzRNoQ8tM3GyraSgqIuoiwQl90oSRkSEEWHRVRdBUkRUNwURLehDWPRBhTpTiMigqIsoiGxbWjBC1LLM0oQy59oTmw5dvjOI6Lk8539+5+M5zyP84yP/mMekQOW2LkakHIUVSEN4i/CEadIgRZ5vRsUYAlWdfT4apxE2xemgH1Q1Du85EdR4zQSgarStJcHcRF7lTGbmQO9z8LtGYqZnQ+42SEqD9/eg804zSYMbpdg/FIXGAFW9PQNNvca6P3Ug3cGFU2coKdex/HBB931YcxHXzRfMycyI2Lm/Eb51nBfdu9sY6LYdRaSadbVcvvoAl/M8Syz5XDjpgJfHaMu5RlXF9khs/aNmUruc0F4b5Odwlmxq6w7bYyt021oQWUrhEfzfLZw9cZL1xUWU5vmgw83w6qscPlzDrBQzB44fgYcV8LUNRO0Sh/diDFDdIoEptgAiGlNToGAfzMiGT0/hTVirYMZCsOwh4u9ohM6m0U6VU3Tv3ljg3YLZ/Ej8HDYO9U0jMHUlJCTGXdPQwEfM6T7QIpIbonu2xAKb5ibzMz2yW93PsvgyWIlpQWpcYM/dl6yqqolW6BLdu2PiDBtsH0Ayh/pNPD5UBGokvdHJWPoO+86nUVe16J5jBpdiv4RQGXb4Gwtob843hElCiNUHmzHNGX0sKlgoZa0tRhXaQDxhR2hYw3dlBT0t80CNLUNicgDL5hYyl3dFkz0Q3bPecA/DRtVgdYJWFRUEv0+hz5/OYO90zIs+Y87ui15EWBJECy6T0tZX8YF3cpMImOpASuIOcMQRRFPlUuq9PV5n/DkoNBrtGwiprYiUhV/xWJDyA9dBXRLd1/l70v/7H/6hZeMN+JugyWJ+AVVN2RU56UUaAAAAAElFTkSuQmCC",
                     "uzh": [
                         [
                             14,
@@ -4034,36 +4034,36 @@ var hsw = function BWJky() {
                         ]
                     ],
                     "1eo": 1727756663290,
-                    "oe7": [
-                        "5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36",
-                        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36",
-                        8,
-                        12,
-                        "en-US",
-                        [
-                            "en-US"
-                        ],
-                        "Win32",
-                        null,
-                        [
-                            "Google Chrome 129",
-                            "Not=A?Brand 8",
-                            "Chromium 129"
-                        ],
-                        false,
-                        "Windows",
-                        2,
-                        5,
-                        true,
-                        false,
-                        100,
-                        false,
-                        false,
-                        true,
-                        "[object Keyboard]",
-                        false,
-                        false
-                    ]
+                    // "oe7": [
+                    //     "5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36",
+                    //     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36",
+                    //     8,
+                    //     12,
+                    //     "en-US",
+                    //     [
+                    //         "en-US"
+                    //     ],
+                    //     "Win32",
+                    //     null,
+                    //     [
+                    //         "Google Chrome 129",
+                    //         "Not=A?Brand 8",
+                    //         "Chromium 129"
+                    //     ],
+                    //     false,
+                    //     "Windows",
+                    //     2,
+                    //     5,
+                    //     true,
+                    //     false,
+                    //     100,
+                    //     false,
+                    //     false,
+                    //     true,
+                    //     "[object Keyboard]",
+                    //     false,
+                    //     false
+                    // ]
                 }
 
 
