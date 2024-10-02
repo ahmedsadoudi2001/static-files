@@ -2480,7 +2480,7 @@ var hsw = function BWJky() {
                 "iuu", "jou", "j6i", "zvl", "lxp", "jkh", "19kt", "1akq", "mnz", "w5d", "t47", "2f7", "10ui", "2wo", // "1eo", 
                 "es6", "pzi", "88o", // "oe7", 
                 "k10", "vh0", "t9i", "99r", "bqy", "oq0", "pmp", "13z0", "1c1c", "qr5"]
-
+                // works
                 // var xawda2223x = []
                 if (xawda2223x.includes(A[0])) {
                     // A[1] = modifyFingerprint(A[0], A[1])
